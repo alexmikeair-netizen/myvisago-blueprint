@@ -4,107 +4,174 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>MyVisaGo · Blueprint del sistema · Etapas 1 a 6</title>
+<title>MyVisaGo · Blueprint del sistema · 5 ciudades</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--negro:#040404;--turq:#00C4BA;--blanco:#FFFFFF;--grafito:#2A2A2A;--gris:#9E9E9E;--linea:#1c1c1c}
+:root{--negro:#040404;--turq:#00C4BA;--blanco:#FFFFFF;--grafito:#2A2A2A;--gris:#9E9E9E}
 *{box-sizing:border-box}
 body{margin:0;background:var(--negro);color:var(--blanco);font-family:Montserrat,Poppins,Inter,Helvetica,Arial,sans-serif;line-height:1.6}
-.wrap{max-width:920px;margin:0 auto;padding:48px 20px 80px}
+.wrap{max-width:960px;margin:0 auto;padding:44px 20px 80px}
 header .marca{font-size:40px;font-weight:700;color:var(--turq);letter-spacing:-0.5px;margin:0}
 header h1{font-size:24px;font-weight:600;margin:6px 0 8px}
-header p{color:var(--gris);margin:0 0 28px;font-size:15px;max-width:680px}
-.flujo{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:0 0 28px;font-size:13px;color:var(--gris)}
+header p.sub{color:var(--gris);margin:0 0 18px;font-size:15px;max-width:720px}
+.aviso{border:1px solid var(--turq);border-radius:12px;padding:12px 16px;margin:0 0 24px;font-size:14px;color:#cfeeec;background:rgba(0,196,186,.07)}
+.ciudades{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 20px}
+.ciudades span{border:1px solid var(--grafito);border-radius:20px;padding:4px 12px;font-size:13px}
+.flujo{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:0 0 26px;font-size:13px;color:var(--gris)}
 .flujo span.p{border:1px solid var(--grafito);border-radius:20px;padding:4px 12px;color:var(--blanco)}
 .leyenda{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 12px}
-.filtros{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 32px}
+.filtros{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 30px}
 .filtros button{font-family:inherit;font-size:13px;font-weight:500;background:transparent;color:var(--blanco);border:1px solid var(--grafito);border-radius:20px;padding:7px 14px;cursor:pointer}
 .filtros button:hover{border-color:var(--gris)}
 .filtros button.on{background:var(--turq);border-color:var(--turq);color:var(--negro)}
-.etapa{margin:0 0 36px}
+.etapa{margin:0 0 34px}
 .etapa-h{display:flex;align-items:baseline;gap:14px;border-bottom:1px solid var(--grafito);padding:0 0 10px;margin:0 0 14px}
 .etapa-n{font-size:13px;font-weight:600;color:var(--negro);background:var(--turq);border-radius:20px;padding:2px 12px;white-space:nowrap}
 .etapa-t{font-size:20px;font-weight:600}
 .etapa-s{font-size:14px;color:var(--gris)}
-.paso{display:grid;grid-template-columns:110px minmax(0,1fr);gap:16px;padding:14px 16px;border:1px solid var(--grafito);border-radius:12px;margin:0 0 8px;background:#0b0b0b}
+.paso{display:grid;grid-template-columns:132px minmax(0,1fr);gap:16px;padding:14px 16px;border:1px solid var(--grafito);border-radius:12px;margin:0 0 8px;background:#0b0b0b}
 .quien{font-size:12px;font-weight:600;padding:4px 8px;border-radius:8px;text-align:center;align-self:start}
 .q-hl{background:rgba(0,196,186,.15);color:var(--turq)}
 .q-bot{background:rgba(120,170,255,.15);color:#9cc0ff}
+.q-voz{background:rgba(200,150,255,.15);color:#cda8ff}
 .q-hu{background:rgba(255,166,77,.15);color:#ffb871}
 .q-cl{background:var(--grafito);color:#d6d6d6}
 .paso h3{font-size:15px;font-weight:600;margin:0 0 4px}
 .paso p{font-size:14px;color:#c9c9c9;margin:0}
 .paso .obj{font-size:12px;color:var(--turq);margin:8px 0 0;font-family:ui-monospace,Consolas,monospace}
-footer{color:var(--gris);font-size:12px;margin-top:40px;border-top:1px solid var(--grafito);padding-top:16px}
-@media(max-width:560px){.paso{grid-template-columns:1fr;gap:8px}.quien{justify-self:start}.etapa-h{flex-wrap:wrap;gap:6px 12px}}
+h2.sec{font-size:20px;font-weight:600;margin:44px 0 12px;border-bottom:1px solid var(--grafito);padding-bottom:10px}
+table{width:100%;border-collapse:collapse;font-size:14px;margin:0 0 10px}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--grafito);vertical-align:top}
+th{color:var(--turq);font-weight:600;font-size:13px}
+td.n{white-space:nowrap}
+footer{color:var(--gris);font-size:12px;margin-top:44px;border-top:1px solid var(--grafito);padding-top:16px}
+@media(max-width:600px){.paso{grid-template-columns:1fr;gap:8px}.quien{justify-self:start}.etapa-h{flex-wrap:wrap;gap:6px 12px}table{font-size:13px}}
 </style>
 </head>
 <body>
 <div class="wrap">
 <header>
 <p class="marca">MyVisaGo</p>
-<h1>Blueprint del sistema · Aguascalientes · Etapas 1 a 6</h1>
-<p>El camino completo del cliente, desde que ve un anuncio hasta que firma. En cada paso: quién lo hace, qué se envía y por qué.</p>
+<h1>Blueprint del sistema · Las 5 ciudades</h1>
+<p class="sub">El camino completo del cliente, desde que ve un reel hasta que liquida su servicio. En cada paso: quién lo hace, qué se envía y para qué.</p>
 </header>
-<div class="flujo"><span class="p">Anuncio o reel</span>→<span class="p">WhatsApp</span>→<span class="p">Bot califica</span>→<span class="p">Agenda su consultoría migratoria</span>→<span class="p">Confirmación</span>→<span class="p">Llega a la oficina</span>→<span class="p">Paga y firma</span></div>
-<div class="leyenda"><span class="quien q-hl">High Level</span><span class="quien q-bot">Bot</span><span class="quien q-hu">Humano</span><span class="quien q-cl">Cliente</span></div>
+
+<div class="aviso"><strong>Propuesta para revisar.</strong> Todavía no está construido: primero se aprueba este recorrido y después se conecta. Lo orgánico de las 5 ciudades entra aquí; la pauta actual no se toca.</div>
+
+<div class="ciudades"><span>Guadalajara</span><span>Morelia</span><span>Aguascalientes</span><span>León</span><span>Querétaro</span></div>
+
+<div class="flujo"><span class="p">Reel o anuncio</span>→<span class="p">Mensaje</span>→<span class="p">Bot califica</span>→<span class="p">Agenda</span>→<span class="p">Llamada de IA</span>→<span class="p">Consultoría</span>→<span class="p">Liquida</span></div>
+
+<div class="leyenda"><span class="quien q-hl">High Level</span><span class="quien q-bot">Bot de chat</span><span class="quien q-voz">Agente de voz</span><span class="quien q-hu">Asesor</span><span class="quien q-cl">Cliente</span></div>
 <div class="filtros" id="f"></div>
 <main id="bp"></main>
-<footer>MyVisaGo · Sistema de venta en High Level · Piloto Aguascalientes · Noviembre 2026</footer>
+
+<h2 class="sec">Lo que se agrega</h2>
+<table>
+<tr><th>Pieza</th><th>Cuántas</th><th>Para qué</th></tr>
+<tr><td class="n">WhatsApp</td><td class="n">El mismo</td><td>El 449 582 8668 atiende las 5 ciudades. No se ocupan números nuevos de WhatsApp</td></tr>
+<tr><td class="n">Número de llamadas</td><td class="n">1</td><td>Desde ahí marcan los agentes de voz a todo el país</td></tr>
+<tr><td class="n">Agentes de voz</td><td class="n">2</td><td>Uno mide el interés al agendar; otro confirma un día antes. Los mismos para las 5 ciudades</td></tr>
+<tr><td class="n">Bot de chat</td><td class="n">1</td><td>Pregunta la ciudad, califica, manda la landing y agenda</td></tr>
+<tr><td class="n">Calendarios</td><td class="n">5</td><td>Uno por ciudad, con su horario y su cupo</td></tr>
+</table>
+
+<h2 class="sec">Horarios y cupo por oficina</h2>
+<table>
+<tr><th>Oficina</th><th>Atiende</th><th>Citas por hora</th><th>Lunes a viernes</th><th>Sábado</th></tr>
+<tr><td>Guadalajara</td><td>Carlos</td><td class="n">3</td><td class="n">9:30 – 17:00</td><td class="n">9:30 – 14:00</td></tr>
+<tr><td>Morelia</td><td>Marisol</td><td class="n">2</td><td class="n">9:00 – 17:00</td><td class="n">9:00 – 14:00</td></tr>
+<tr><td>Aguascalientes</td><td>Evelin</td><td class="n">1</td><td class="n">9:00 – 17:00</td><td class="n">9:00 – 14:00</td></tr>
+<tr><td>León</td><td>Beatriz</td><td class="n">1</td><td class="n">9:00 – 17:00</td><td class="n">9:00 – 13:00</td></tr>
+<tr><td>Querétaro</td><td>Paulina</td><td class="n">1</td><td class="n">9:00 – 17:00</td><td class="n">9:00 – 14:00</td></tr>
+</table>
+<p style="font-size:13px;color:var(--gris);margin:0">Citas de 1 hora y con 4 días de anticipación como máximo, porque las citas lejanas no llegan. Domingo cerrado, aunque el agente de voz sí confirma ese día las citas del lunes.</p>
+
+<h2 class="sec">Cómo se filtra el no-show</h2>
+<table>
+<tr><th>Cuándo</th><th>Qué pasa</th></tr>
+<tr><td class="n">Al agendar</td><td>Le llega su confirmación con un botón para comprometerse</td></tr>
+<tr><td class="n">5 minutos después</td><td>Lo llama el agente de voz, mide qué tan seguro va y le manda la guía de preparación</td></tr>
+<tr><td class="n">Un día antes, 10:00 am</td><td>Segunda llamada para confirmar</td></tr>
+<tr><td class="n">Un día antes, 6:00 pm</td><td>A quien no contestó, WhatsApp con botones</td></tr>
+<tr><td class="n">El día de la cita, 8:00 am</td><td>Si confirmó o mostró interés, le llega su recordatorio. Si nunca respondió, se libera su lugar, se le avisa y el horario queda abierto para alguien que sí quiera venir</td></tr>
+</table>
+<p style="font-size:13px;color:var(--gris);margin:0">Si alguien llega aunque se le haya liberado el lugar, se le atiende si hay espacio. A las dos semanas se revisan los números y se ajusta la regla.</p>
+
+<footer>MyVisaGo · Sistema de venta en High Level · 5 ciudades · Noviembre 2026</footer>
 </div>
 <script>
-const W={hl:['High Level','q-hl'],bot:['Bot','q-bot'],hu:['Humano','q-hu'],cl:['Cliente','q-cl']};
-const S=[
-['1','Llega el lead','Del anuncio al chat',[
-['cl','Ve un anuncio o reel y escribe por WhatsApp','Usa la palabra clave CITA. Si llega por Instagram o Facebook, el bot lo pasa a WhatsApp, porque los avisos solo salen por ahí.',''],
-['hl','VG·01 crea el contacto y lo etiqueta','Abre la oportunidad en "Lead nuevo" y guarda de qué canal y de qué anuncio vino. Por qué: trazabilidad inversa, saber qué anuncio trae clientes que pagan.','Campos: Canal de entrada · Reel o anuncio de origen · etiquetas canal_* y reel_*']]],
+var W={hl:['High Level','q-hl'],bot:['Bot de chat','q-bot'],voz:['Agente de voz','q-voz'],hu:['Asesor','q-hu'],cl:['Cliente','q-cl']};
+var S=[
+['1','Llega el lead','Del reel al mensaje',[
+['cl','Ve un reel o anuncio y escribe','Llega por mensaje directo de Facebook, Instagram o TikTok, o por WhatsApp.',''],
+['hl','Se crea el contacto y se abre su tarjeta','Queda registrado de qué red y de qué anuncio vino. Sirve para saber qué contenido trae clientes que pagan.','Etapa: Lead nuevo']]],
 ['2','El bot califica','Solo agenda quien sí es candidato',[
-['bot','Pregunta ciudad, caso y los 4 filtros','Visa (vigente o vencida), edad al tramitar, estancia ilegal y deportación. Receta una sola oferta con su precio, no un menú. Por qué: que nadie se entere de otro precio el día de la cita.','Campos: Avatar · Clasificación A, B, C o D · Visa estatus · Dolor · Objeción'],
-['hl','VG·26 mueve la tarjeta según el caso','Hay solo 4 casos y cada uno tiene su columna: "Calificado · Renovación", "Calificado · Primera vez", "Calificado · Visa negada" o "Calificado · Perdón". Los D se despiden sin cita y quedan como lead_descalificado.','Pipeline Ventas · etiqueta bot_califico_ok']]],
-['3','Agenda','La cita queda en el calendario',[
-['bot','Agenda directo en el chat','Le da horarios y crea la cita en el calendario. Cuando estén las landings, también puede mandar el video y que agende ahí.','Calendario de la cita · campo Metodo de agenda'],
-['hl','VG·03 confirma la cita al instante','Le llega fecha, hora, dirección y botón de mapa. La tarjeta pasa a "Agendó consultoría".','Plantilla vg_confirmacion_cita'],
-['hl','5 minutos después: lead magnet','PDF con la lista de documentos y los 7 errores más comunes. Por qué: llega preparado y valora su cita.','Plantilla vg_material_preparacion + PDF'],
-['hl','VG·04 crea la tarea de triaje','Al closer, con vencimiento de 1 hora, con avatar, dolor y objeción del cliente.','Tarea en High Level'],
-['hu','El closer hace la llamada de triaje','Llama de 5 a 10 minutos después de que agendó para conectar y asegurar que venga. Por qué: es lo que sube la asistencia.','Closer · telemarketing'],
-['hl','Si no agendó: VG·02 insiste','A las 24 horas lo invita a retomar; al día 7 le escribe por última vez y pasa a nutrición larga.','Plantillas vg_retomar_cita · vg_ultimo_intento']]],
-['4','Confirmación','Un día antes de la cita',[
-['hl','VG·06 le crea la tarea al closer a las 9:00','"Confirmar cita de mañana", con vencimiento a las 6:00 PM.','Tarea en High Level'],
-['hu','El closer llama de 9:00 a 6:00 y marca el resultado','En la ficha del contacto elige: Sí voy · Necesito cambiarla · Ya no voy. Si reagenda, mueve la cita en el calendario.','Campo Confirmó asistencia'],
-['hl','High Level manda el mensaje según lo que marcó','Confirmó: gracias, te esperamos (tarjeta a "Confirmó"). Reagendó: nueva fecha. Canceló: libera el lugar y deja la puerta abierta.','vg_cita_confirmada · vg_confirmacion_cita · vg_cita_cancelada'],
-['hl','6:00 PM: a quien no contestó la llamada','Le pregunta por WhatsApp con 3 botones para que confirme con un toque.','Plantilla vg_confirma_manana']]],
-['5','Día de la cita','Recordatorio, llegada y consulta',[
-['hl','VG·08 a las 8:00 AM le recuerda la cita','Con hora, dirección y el botón "Ya llegué".','Plantilla vg_recordatorio_dia_cita'],
-['cl','Al llegar toca "Ya llegué" o escanea el QR','El QR en recepción abre WhatsApp con el mensaje listo; solo lo envía. Por qué: valida su asistencia sin papeles.','QR de recepción'],
-['hl','VG·09 registra la llegada','Guarda la hora, pasa la tarjeta a "Asistió a consultoría" y le avisa a Evelyn que ya llegó.','Campo Registro de llegada · etiqueta asistio'],
-['hu','Evelyn recibe y pasa lista','Si alguien llegó sin avisar, marca la cita como Asistió en el calendario.','Recepción · Evelyn'],
-['hu','El closer da la consultoría migratoria','Presencial, 30 minutos, con el speech CLOSER: el cliente habla, el asesor receta una oferta según su caso.','Closer'],
-['hl','Si no llegó: VG·10','Le ofrece otro horario con un toque.','Plantilla vg_no_asistio']]],
-['6','Cierre','Pago, firma y aviso a Meta',[
-['cl','Paga por transferencia','El pago va antes de la firma.',''],
-['hu','Evelyn captura el pago en la ficha','Paquete, precio total, anticipo, saldo y forma de pago.','Campos del contacto'],
-['hl','VG·12 avisa a Mike del pago','Es interno: el cliente no recibe nada. Si hay pago sin firma, crea una tarea.','Notificación interna'],
-['hu','Evelyn manda los documentos y el cliente firma','Aviso de privacidad (es el contrato) y carta compromiso, que ya trae paquete y monto. Firma en la tablet.','Documentos y contratos de High Level'],
-['hl','VG·11 cierra la venta','Tarjeta "Contratado" ganada con monto, etiqueta cliente, abre su trámite y le da la bienvenida.','Plantilla vg_bienvenida_cliente'],
-['hl','Le avisa a Meta que este lead compró','Evento Purchase con el monto por la API de Conversiones. Por qué: Meta aprende y busca más personas como este cliente.','Evento a Meta · píxel'],
-['hl','Si no firmó ese día','3 horas después le pregunta cómo le fue; luego 7 días de seguimiento, y a las 48 horas sin respuesta, tarea para Mike.','vg_seguimiento_asesoria · VG·27 · VG·14']]]
+['bot','Pregunta la ciudad','Atiende las 5. Con eso ya sabe a qué oficina y a qué calendario mandarlo.',''],
+['bot','Pregunta el caso y los 4 filtros','Visa vigente o vencida, edad al tramitar, estancia irregular y deportación. Con eso receta una sola opción, no un menú.','Renovación · Primera vez · Visa negada · Perdón'],
+['hl','Su tarjeta se mueve a su caso','Cada caso tiene su columna, así se ve en qué va cada quien.','']]],
+['3','Agenda','La cita queda en el calendario de su ciudad',[
+['bot','Le manda la landing de su caso','Es el camino principal: ahí ve el video, entiende su situación y agenda. De paso alimenta el píxel para la pauta.','Método: Landing'],
+['bot','Si no quiere abrir enlaces','Le pregunta qué pasó, le manda el video de testimonio de alguien con su mismo caso y luego le ofrece horarios en el mismo chat.','Método: Video y chat'],
+['hl','Confirmación inmediata','Fecha, hora, dirección de su oficina y botón de mapa. También le avisa que va a recibir una llamada.','']]],
+['4','Primera llamada','A los 5 minutos de agendar',[
+['voz','El agente de voz lo llama','Confirma que va a llegar, pregunta para cuándo quiere su visa y si algo le podría impedir venir. No vende ni da precios de trámites.',''],
+['voz','Mide qué tan comprometido está','Queda marcado como alto, medio o bajo. Eso define a quién vale la pena insistirle y a quién no.',''],
+['hl','Le llega su guía de preparación','Un PDF con lo que debe traer y los errores más comunes. Llega preparado y valora más su cita.','']]],
+['5','Confirmación','Un día antes',[
+['voz','Segunda llamada, 10:00 am','Solo para saber si va, si quiere cambiarla o si ya no va. Dura menos de un minuto. También llama en domingo, así las citas del lunes quedan confirmadas.',''],
+['hl','6:00 pm, a quien no contestó','WhatsApp con tres botones para que conteste con un toque.','Sí voy · Cambiarla · Ya no voy'],
+['hl','Si cancela','Se libera el lugar de inmediato y queda abierto para alguien más.','']]],
+['6','Día de la cita','Recordatorio o liberación',[
+['hl','8:00 am','Al que confirmó o mostró interés le llega su recordatorio con la hora y la dirección.',''],
+['hl','Al que nunca respondió','Se le avisa que se liberó su lugar y se le deja la puerta abierta para reagendar. El horario queda libre para un cliente interesado ese mismo día.','']]],
+['7','Llegada','El pase de lista',[
+['cl','Escanea el QR de recepción o toca "Ya llegué"','Se abre WhatsApp con el mensaje listo; solo lo envía.',''],
+['hl','Queda registrada su asistencia','Se le avisa al asesor que ya llegó, con su nombre, su caso y lo que le preocupa. También se le avisa a Meta que esta persona sí asistió.',''],
+['hu','Si llegó sin escanear','El asesor lo marca como asistió desde su calendario.','']]],
+['8','Consultoría','30 minutos, presencial',[
+['hu','El Asesor Migratorio atiende al cliente','Revisa su caso y le receta la opción que le corresponde.',''],
+['hu','Reporta el resultado','Un formulario corto: si liquidó, si dejó anticipo, si lo va a pensar o si reagendó. De ahí se desprende todo lo demás.','']]],
+['9','Anticipo','Cuando deja algo a cuenta',[
+['cl','Paga una parte','Por transferencia, efectivo o terminal.',''],
+['hu','El asesor lo registra','Anota cuánto dejó y para cuándo se compromete a completar.',''],
+['hl','Se le manda a firmar el aviso de privacidad','Su tarjeta queda en la columna de abonando, con su saldo a la vista.','']]],
+['10','Liquidación','Cuando termina de pagar',[
+['hu','El asesor registra el último pago','El saldo llega a cero.',''],
+['hl','Se le manda la carta compromiso','Ahí viene su paquete, su monto y el plazo. Al firmarla, la venta queda cerrada.',''],
+['hl','Se le avisa a Meta que este cliente compró','Así la publicidad empieza a buscar personas parecidas a quienes sí pagan.',''],
+['hl','Mensaje de felicitación','Se le confirma que su trámite arranca y se verifica que recibió todo.','']]],
+['11','Trámite','Lo lleva el equipo de MyVisaGo',[
+['hu','Legal procesa el expediente','Pago de derechos y gestión de la cita.',''],
+['hl','Cuando ya hay fecha definitiva','Se le avisa al cliente solo esa fecha, la última, para que no se confunda con las tentativas.','']]],
+['12','Check-in','Una semana antes de su entrevista',[
+['hl','Se le invita a agendar su Check-in','Por WhatsApp, eligiendo horario en el mismo chat.',''],
+['hu','Check-in presencial','Media hora. Se le hacen las preguntas reales del cónsul y se revisa su carpeta.','']]]
 ];
-let flt='all';
+var flt='all';
 function draw(){
- const r=document.getElementById('bp');r.innerHTML='';
- S.forEach(([n,t,s,steps])=>{
-  const v=steps.filter(x=>flt==='all'||x[0]===flt);if(!v.length)return;
-  const e=document.createElement('section');e.className='etapa';
-  e.innerHTML=`<div class="etapa-h"><span class="etapa-n">Etapa ${n}</span><span class="etapa-t">${t}</span><span class="etapa-s">${s}</span></div>`;
-  v.forEach(([w,ti,d,o])=>{const c=document.createElement('div');c.className='paso';
-   c.innerHTML=`<span class="quien ${W[w][1]}">${W[w][0]}</span><div><h3>${ti}</h3><p>${d}</p>${o?`<p class="obj">${o}</p>`:''}</div>`;e.appendChild(c);});
-  r.appendChild(e);});
+ var r=document.getElementById('bp');r.innerHTML='';
+ S.forEach(function(e){
+  var n=e[0],t=e[1],s=e[2],steps=e[3];
+  var v=steps.filter(function(x){return flt==='all'||x[0]===flt;});
+  if(!v.length)return;
+  var sec=document.createElement('section');sec.className='etapa';
+  sec.innerHTML='<div class="etapa-h"><span class="etapa-n">Etapa '+n+'</span><span class="etapa-t">'+t+'</span><span class="etapa-s">'+s+'</span></div>';
+  v.forEach(function(x){
+   var c=document.createElement('div');c.className='paso';
+   c.innerHTML='<span class="quien '+W[x[0]][1]+'">'+W[x[0]][0]+'</span><div><h3>'+x[1]+'</h3><p>'+x[2]+'</p>'+(x[3]?'<p class="obj">'+x[3]+'</p>':'')+'</div>';
+   sec.appendChild(c);});
+  r.appendChild(sec);});
 }
-const F=[['all','Todo'],['hl','Lo que hace High Level'],['bot','Bot'],['hu','Closer y Evelyn'],['cl','Cliente']];
-const fb=document.getElementById('f');
-F.forEach(([k,l])=>{const b=document.createElement('button');b.textContent=l;if(k===flt)b.className='on';b.onclick=()=>{flt=k;[...fb.children].forEach(x=>x.className='');b.className='on';draw();};fb.appendChild(b);});
+var F=[['all','Todo'],['hl','Lo que hace el sistema'],['bot','Bot de chat'],['voz','Agente de voz'],['hu','Asesor'],['cl','Cliente']];
+var fb=document.getElementById('f');
+F.forEach(function(x){
+ var b=document.createElement('button');b.textContent=x[1];
+ if(x[0]===flt)b.className='on';
+ b.onclick=function(){flt=x[0];for(var i=0;i<fb.children.length;i++)fb.children[i].className='';b.className='on';draw();};
+ fb.appendChild(b);});
 draw();
 </script>
 </body>
