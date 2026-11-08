@@ -48,7 +48,7 @@ footer{color:var(--gris);font-size:12px;margin-top:40px;border-top:1px solid var
 <h1>Blueprint del sistema · Aguascalientes · Etapas 1 a 6</h1>
 <p>El camino completo del cliente, desde que ve un anuncio hasta que firma. En cada paso: quién lo hace, qué se envía y por qué.</p>
 </header>
-<div class="flujo"><span class="p">Anuncio o reel</span>→<span class="p">WhatsApp</span>→<span class="p">Bot califica</span>→<span class="p">Agenda</span>→<span class="p">Confirmación</span>→<span class="p">Llega a la oficina</span>→<span class="p">Paga y firma</span></div>
+<div class="flujo"><span class="p">Anuncio o reel</span>→<span class="p">WhatsApp</span>→<span class="p">Bot califica</span>→<span class="p">Agenda su consultoría migratoria</span>→<span class="p">Confirmación</span>→<span class="p">Llega a la oficina</span>→<span class="p">Paga y firma</span></div>
 <div class="leyenda"><span class="quien q-hl">High Level</span><span class="quien q-bot">Bot</span><span class="quien q-hu">Humano</span><span class="quien q-cl">Cliente</span></div>
 <div class="filtros" id="f"></div>
 <main id="bp"></main>
@@ -62,10 +62,10 @@ const S=[
 ['hl','VG·01 crea el contacto y lo etiqueta','Abre la oportunidad en "Lead nuevo" y guarda de qué canal y de qué anuncio vino. Por qué: trazabilidad inversa, saber qué anuncio trae clientes que pagan.','Campos: Canal de entrada · Reel o anuncio de origen · etiquetas canal_* y reel_*']]],
 ['2','El bot califica','Solo agenda quien sí es candidato',[
 ['bot','Pregunta ciudad, caso y los 4 filtros','Visa (vigente o vencida), edad al tramitar, estancia ilegal y deportación. Receta una sola oferta con su precio, no un menú. Por qué: que nadie se entere de otro precio el día de la cita.','Campos: Avatar · Clasificación A, B, C o D · Visa estatus · Dolor · Objeción'],
-['hl','VG·26 mueve la tarjeta según el caso','A, B o C pasa a "Calificado · Renovación, Acelerador o Perdón". D se despide sin cita y queda como lead_descalificado.','Pipeline Ventas · etiqueta bot_califico_ok']]],
+['hl','VG·26 mueve la tarjeta según el caso','Hay solo 4 casos y cada uno tiene su columna: "Calificado · Renovación", "Calificado · Primera vez", "Calificado · Visa negada" o "Calificado · Perdón". Los D se despiden sin cita y quedan como lead_descalificado.','Pipeline Ventas · etiqueta bot_califico_ok']]],
 ['3','Agenda','La cita queda en el calendario',[
 ['bot','Agenda directo en el chat','Le da horarios y crea la cita en el calendario. Cuando estén las landings, también puede mandar el video y que agende ahí.','Calendario de la cita · campo Metodo de agenda'],
-['hl','VG·03 confirma la cita al instante','Le llega fecha, hora, dirección y botón de mapa. La tarjeta pasa a "Agendó".','Plantilla vg_confirmacion_cita'],
+['hl','VG·03 confirma la cita al instante','Le llega fecha, hora, dirección y botón de mapa. La tarjeta pasa a "Agendó consultoría".','Plantilla vg_confirmacion_cita'],
 ['hl','5 minutos después: lead magnet','PDF con la lista de documentos y los 7 errores más comunes. Por qué: llega preparado y valora su cita.','Plantilla vg_material_preparacion + PDF'],
 ['hl','VG·04 crea la tarea de triaje','Al closer, con vencimiento de 1 hora, con avatar, dolor y objeción del cliente.','Tarea en High Level'],
 ['hu','El closer hace la llamada de triaje','Llama de 5 a 10 minutos después de que agendó para conectar y asegurar que venga. Por qué: es lo que sube la asistencia.','Closer · telemarketing'],
@@ -78,9 +78,9 @@ const S=[
 ['5','Día de la cita','Recordatorio, llegada y consulta',[
 ['hl','VG·08 a las 8:00 AM le recuerda la cita','Con hora, dirección y el botón "Ya llegué".','Plantilla vg_recordatorio_dia_cita'],
 ['cl','Al llegar toca "Ya llegué" o escanea el QR','El QR en recepción abre WhatsApp con el mensaje listo; solo lo envía. Por qué: valida su asistencia sin papeles.','QR de recepción'],
-['hl','VG·09 registra la llegada','Guarda la hora, pasa la tarjeta a "Asistió" y le avisa a Evelyn que ya llegó.','Campo Registro de llegada · etiqueta asistio'],
+['hl','VG·09 registra la llegada','Guarda la hora, pasa la tarjeta a "Asistió a consultoría" y le avisa a Evelyn que ya llegó.','Campo Registro de llegada · etiqueta asistio'],
 ['hu','Evelyn recibe y pasa lista','Si alguien llegó sin avisar, marca la cita como Asistió en el calendario.','Recepción · Evelyn'],
-['hu','El closer da la consulta','Presencial, con el speech CLOSER: el cliente habla, el asesor receta una oferta según su caso.','Closer'],
+['hu','El closer da la consultoría migratoria','Presencial, 30 minutos, con el speech CLOSER: el cliente habla, el asesor receta una oferta según su caso.','Closer'],
 ['hl','Si no llegó: VG·10','Le ofrece otro horario con un toque.','Plantilla vg_no_asistio']]],
 ['6','Cierre','Pago, firma y aviso a Meta',[
 ['cl','Paga por transferencia','El pago va antes de la firma.',''],
