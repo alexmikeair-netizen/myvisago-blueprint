@@ -67,7 +67,7 @@ footer{color:var(--gris);font-size:12px;margin-top:44px;border-top:1px solid var
 <p class="sub">El camino completo del cliente, desde que ve un reel hasta que liquida su servicio. En cada paso: quién lo hace, qué se envía, con qué automatización y con qué mensaje.</p>
 </header>
 
-<div class="aviso"><strong>Propuesta para revisar.</strong> Todavía no está construido: primero se aprueba este recorrido y después se conecta. Lo orgánico de las 5 ciudades entra aquí; la pauta actual no se toca.<br><br><strong>Cambios del 8 de noviembre:</strong> al cliente se le atiende en la red donde llegó, WhatsApp entra cuando ya agendó, y la confirmación se adelanta a dos días antes para que quede un día de colchón y se pueda volver a llenar el lugar.</div>
+<div class="aviso"><strong>Propuesta para revisar.</strong> Todavía no está construido: primero se aprueba este recorrido y después se conecta. Lo orgánico de las 5 ciudades entra aquí; la pauta actual no se toca.<br><br><strong>Cambios del 8 de noviembre:</strong> al cliente se le atiende en la red donde llegó, WhatsApp entra cuando ya agendó y sale por una sola línea, y la confirmación se adelanta a dos días antes para que quede un día de colchón y se pueda volver a llenar el lugar.</div>
 
 <div class="ciudades"><span>Guadalajara</span><span>Morelia</span><span>Aguascalientes</span><span>León</span><span>Querétaro</span></div>
 
@@ -78,24 +78,28 @@ footer{color:var(--gris);font-size:12px;margin-top:44px;border-top:1px solid var
 <main id="bp"></main>
 
 <h2 class="sec">Los mensajes de WhatsApp</h2>
-<p class="secsub">Son 15 y sirven igual para las 5 ciudades: la dirección y el mapa se llenan solos según la oficina de cada cita. Meta tiene que aprobarlos antes de usarlos, y tarda alrededor de 24 horas. Los de utilidad son los baratos; los de marketing cuestan más y son los de recuperación.</p>
+<p class="secsub">Son 19 y sirven igual para las 5 ciudades y el online: la dirección y el mapa se llenan solos según la oficina de cada cita. Meta tiene que aprobarlos antes de usarlos, y tarda alrededor de 24 horas. Los de utilidad son los baratos; los de marketing cuestan más y son los de recuperación.</p>
 <table>
 <tr><th>Mensaje</th><th>Tipo</th><th>Cuándo sale</th><th>Flujo</th></tr>
 <tr><td class="pl">vg_confirmacion_cita</td><td><span class="pill util">Utilidad</span></td><td>Al agendar y al cambiar de fecha: día, hora, dirección y mapa</td><td class="cod">VG·03</td></tr>
 <tr><td class="pl">vg_material_preparacion</td><td><span class="pill util">Utilidad</span></td><td>5 minutos después: la guía en PDF para que llegue preparado</td><td class="cod">VG·03</td></tr>
 <tr><td class="pl">vg_confirma_asistencia</td><td><span class="pill util">Utilidad</span></td><td>6 pm de dos días antes, a quien no contestó la llamada. Le da hasta las 8 am del día siguiente</td><td class="cod">VG·06</td></tr>
-<tr><td class="pl">vg_cita_confirmada</td><td><span class="pill util">Utilidad</span></td><td>Cuando confirma que viene</td><td class="cod">VG·06</td></tr>
+<tr><td class="pl">vg_cita_confirmada</td><td><span class="pill util">Utilidad</span></td><td>Cuando confirma por llamada que viene</td><td class="cod">VG·30</td></tr>
 <tr><td class="pl">vg_cambio_horario</td><td><span class="pill util">Utilidad</span></td><td>Cuando pide cambiar de día, para que elija otro horario</td><td class="cod">VG·30</td></tr>
-<tr><td class="pl">vg_cita_cancelada</td><td><span class="pill util">Utilidad</span></td><td>Cuando cancela: se libera su lugar y queda la puerta abierta</td><td class="cod">VG·06</td></tr>
+<tr><td class="pl">vg_cita_cancelada</td><td><span class="pill util">Utilidad</span></td><td>Cuando cancela por llamada: se libera su lugar y queda la puerta abierta</td><td class="cod">VG·30</td></tr>
 <tr><td class="pl">vg_cita_liberada</td><td><span class="pill util">Utilidad</span></td><td>8 am del día anterior a su cita, a quien nunca respondió: se libera su lugar</td><td class="cod">VG·08</td></tr>
 <tr><td class="pl">vg_recordatorio_manana</td><td><span class="pill util">Utilidad</span></td><td>8 am del día anterior, a quien confirmó o mostró interés</td><td class="cod">VG·08</td></tr>
 <tr><td class="pl">vg_recordatorio_dia_cita</td><td><span class="pill util">Utilidad</span></td><td>8 am del día de la cita, con el botón "Ya llegué"</td><td class="cod">VG·08</td></tr>
-<tr><td class="pl">vg_no_asistio</td><td><span class="pill util">Utilidad</span></td><td>Cuando no llegó, para ofrecerle otro horario</td><td class="cod">VG·10</td></tr>
+<tr><td class="pl">vg_no_asistio</td><td><span class="pill util">Utilidad</span></td><td>Cuando no llegó, para ofrecerle otro horario (Primera vez, Visa negada y Perdón)</td><td class="cod">VG·10</td></tr>
+<tr><td class="pl">vg_no_asistio_opcion_online</td><td><span class="pill util">Utilidad</span></td><td>Cuando no llegó y es Renovación: además de otro horario, se le ofrece en línea</td><td class="cod">VG·10</td></tr>
 <tr><td class="pl">vg_seguimiento_asesoria</td><td><span class="pill util">Utilidad</span></td><td>3 horas después de su cita: cómo le fue y si quedó alguna duda</td><td class="cod">VG·13</td></tr>
 <tr><td class="pl">vg_recordatorio_saldo</td><td><span class="pill util">Utilidad</span></td><td>Cuando tiene saldo pendiente, para la cobranza</td><td class="cod">VG·28</td></tr>
 <tr><td class="pl">vg_felicitacion_liquidacion</td><td><span class="pill util">Utilidad</span></td><td>Al liquidar: felicitación y confirmación de que recibió todo</td><td class="cod">VG·11</td></tr>
+<tr><td class="pl">vg_confirmacion_online</td><td><span class="pill util">Utilidad</span></td><td>Al agendar en línea, solo Renovación: sin oficina ni mapa</td><td class="cod">VG·03</td></tr>
+<tr><td class="pl">vg_cita_confirmada_online</td><td><span class="pill util">Utilidad</span></td><td>Cuando confirma por llamada su cita en línea</td><td class="cod">VG·30</td></tr>
+<tr><td class="pl">vg_recordatorio_online</td><td><span class="pill util">Utilidad</span></td><td>Un día antes y el día de la cita, en línea</td><td class="cod">VG·08</td></tr>
 <tr><td class="pl">vg_retomar_cita</td><td><span class="pill mkt">Marketing</span></td><td>Al que ya dejó su teléfono y no agendó, canceló o no llegó, para invitarlo de nuevo</td><td class="cod">VG·02</td></tr>
-<tr><td class="pl">vg_ultimo_intento</td><td><span class="pill mkt">Marketing</span></td><td>Al día 7, última invitación antes de dejarlo en paz</td><td class="cod">VG·02 · VG·27</td></tr>
+<tr><td class="pl">vg_ultimo_intento</td><td><span class="pill mkt">Marketing</span></td><td>Al día 7, última invitación antes de dejarlo en paz</td><td class="cod">VG·02</td></tr>
 </table>
 
 <h2 class="sec">Las automatizaciones</h2>
@@ -114,21 +118,22 @@ footer{color:var(--gris);font-size:12px;margin-top:44px;border-top:1px solid var
 <tr><td class="cod">VG·10</td><td>No llegó a su cita</td><td>Lo llama el agente de voz, le pregunta qué pasó y le ofrece otro horario</td></tr>
 <tr><td class="cod">VG·12</td><td>El asesor manda su reporte</td><td>Registra el resultado y el pago, y actualiza su tarjeta</td></tr>
 <tr><td class="cod">VG·11</td><td>Deja anticipo o liquida</td><td>Manda a firmar el documento que toca y cierra la venta</td></tr>
-<tr><td class="cod">VG·28</td><td>Queda saldo pendiente</td><td>Recordatorios de pago hasta que liquide</td></tr>
+<tr><td class="cod">VG·28</td><td>Llega la fecha en que se comprometió a pagar</td><td>Le recuerda ese mismo día y sigue hasta que liquide</td></tr>
 <tr><td class="cod">VG·29</td><td>30 días sin pagar ni responder</td><td>Lo marca como trunco, con todo su historial</td></tr>
 <tr><td class="cod">VG·13</td><td>3 horas después de su cita</td><td>Le pregunta cómo le fue y detecta ventas sin reportar</td></tr>
 <tr><td class="cod">VG·02</td><td>Calificó pero no agendó</td><td>Si dejó teléfono, lo invita a las 24 horas y otra vez al día 7. Si no, un solo seguimiento en su chat</td></tr>
 <tr><td class="cod">VG·14</td><td>Asistió y no hay reporte</td><td>Le recuerda al asesor que falta su reporte</td></tr>
+<tr><td class="cod">VG·31</td><td>Legal registra la fecha definitiva</td><td>Le avisa al cliente solo esa fecha y lo invita a agendar su Check-in. Es de la segunda etapa</td></tr>
 </table>
 
 <h2 class="sec">Lo que se agrega</h2>
 <table>
 <tr><th>Pieza</th><th>Cuántas</th><th>Para qué</th></tr>
-<tr><td class="n">WhatsApp</td><td class="n">1 para arrancar</td><td>La línea de Guadalajara (33) manda los recordatorios de las 5 ciudades. Las líneas de las demás ciudades se agregan conforme lleguen. La del 449 de Aguascalientes queda pendiente</td></tr>
+<tr><td class="n">WhatsApp</td><td class="n">1</td><td>Una sola línea de Guadalajara (33), solo para las confirmaciones, los recordatorios y las plantillas de las 5 ciudades</td></tr>
 <tr><td class="n">Número de llamadas</td><td class="n">Por definir</td><td>Se define con DAPTA: si sale con números aleatorios o con lada local</td></tr>
 <tr><td class="n">Agentes de voz</td><td class="n">4</td><td>Uno mide el interés al agendar, otro confirma dos días antes, otro recupera al que no llegó y otro contesta cuando el cliente llama. Los mismos para las 5 ciudades. Están parados hasta el onboarding de DAPTA</td></tr>
 <tr><td class="n">Bot de chat</td><td class="n">1</td><td>Pregunta la ciudad, califica, manda la landing y agenda, en la red donde llegó el cliente</td></tr>
-<tr><td class="n">Calendarios</td><td class="n">6</td><td>Uno por ciudad, con su horario y su cupo, más el online, que no se ofrece de entrada</td></tr>
+<tr><td class="n">Calendarios</td><td class="n">6</td><td>Uno por ciudad, con su horario y su cupo, más el online, solo para Renovación y nunca de entrada</td></tr>
 </table>
 
 <h2 class="sec">Horarios y cupo por oficina</h2>
@@ -151,7 +156,7 @@ footer{color:var(--gris);font-size:12px;margin-top:44px;border-top:1px solid var
 <tr><td class="n">Dos días antes, 6 pm</td><td>A quien no contestó, WhatsApp con botones y hora límite</td><td class="cod">VG·06</td></tr>
 <tr><td class="n">Un día antes, 8 am</td><td>Si confirmó o mostró interés, recordatorio. Si nunca respondió, se libera su lugar y queda un día completo para alguien que sí quiera venir</td><td class="cod">VG·08</td></tr>
 <tr><td class="n">El día, 8 am</td><td>A quien sigue en pie, su recordatorio con el botón "Ya llegué"</td><td class="cod">VG·08</td></tr>
-<tr><td class="n">Si no llegó</td><td>Agente de no asistió: lo llama ese mismo día, le pregunta qué pasó y busca reagendarlo u ofrecerle la cita en línea</td><td class="cod">VG·10</td></tr>
+<tr><td class="n">Si no llegó</td><td>Agente de no asistió: lo llama ese mismo día, le pregunta qué pasó y busca reagendarlo. Si es Renovación, también se le ofrece en línea</td><td class="cod">VG·10</td></tr>
 </table>
 <p class="secsub">El cuarto agente no va en este orden: entra cuando el cliente llama con dudas. Quien agenda para hoy o para mañana solo recibe la llamada de los 5 minutos y su lugar no se libera solo, porque no tuvo oportunidad de responder. Si alguien llega aunque se le haya liberado el lugar, se le atiende si hay espacio. A las dos semanas se revisan los números y se ajusta la regla.</p>
 
@@ -172,6 +177,7 @@ var S=[
 ['bot','Si no quiere abrir enlaces','Le pregunta qué pasó, le manda el video de testimonio de alguien con su mismo caso y luego le ofrece horarios en el mismo chat.',[['p','Método: Video y chat']]],
 ['bot','Al cliente caliente le ofrece lo más cercano','Si tiene prisa, le da el horario más próximo, incluso el mismo día.',[]],
 ['bot','Si agendó en el chat, le pide su WhatsApp','"Para mandarte tu confirmación y la dirección." Sin teléfono no hay recordatorios, porque en Facebook e Instagram solo se le puede escribir 24 horas después de su último mensaje.',[['p','Campo: Teléfono']]],
+['bot','Si no puede ir a la oficina','En línea solo existe para Renovación y nunca se ofrece de entrada: es la última opción si no puede ir, lo pregunta o vive donde no hay oficina. En los otros casos se le invita a la oficina más cercana.',[['p','Calendario Online']]],
 ['hl','Se detecta su oficina','Según el calendario donde agendó, se carga la dirección, el mapa y el asesor que lo va a atender.',[['f','VG·00']]],
 ['hl','Confirmación inmediata','Desde aquí entra WhatsApp. Fecha, hora, dirección de su oficina y botón de mapa. También le avisa que va a recibir una llamada.',[['f','VG·03'],['p','vg_confirmacion_cita']]]]],
 ['4','Primera llamada','A los 5 minutos de agendar',[
@@ -191,8 +197,8 @@ var S=[
 ['cl','Escanea el QR de recepción o toca "Ya llegué"','Se abre WhatsApp con el mensaje listo; solo lo envía.',[]],
 ['hl','Queda registrada su asistencia','Se le avisa al asesor que ya llegó, con su nombre, su caso y lo que le preocupa. También se le avisa a Meta que esta persona sí asistió.',[['f','VG·09']]],
 ['hu','Si llegó sin escanear','El asesor lo marca como asistió desde su calendario.',[]],
-['voz','Si no llegó, lo llama el agente','Ese mismo día le pregunta qué pasó y busca reagendarlo u ofrecerle la cita en línea.',[['f','VG·10']]],
-['hl','También por WhatsApp','Le llega el mensaje con la opción de otro horario.',[['f','VG·10'],['p','vg_no_asistio']]]]],
+['voz','Si no llegó, lo llama el agente','Ese mismo día le pregunta qué pasó y busca reagendarlo. Si es Renovación, también se le ofrece en línea.',[['f','VG·10']]],
+['hl','También por WhatsApp','Le llega el mensaje con la opción de otro horario.',[['f','VG·10'],['p','vg_no_asistio'],['p','vg_no_asistio_opcion_online']]]]],
 ['8','Consultoría','30 minutos, presencial',[
 ['hu','El Asesor Migratorio atiende al cliente','Revisa su caso y le receta la opción que le corresponde.',[]],
 ['hu','Reporta el resultado','Un formulario corto: si liquidó, si dejó anticipo, si lo va a pensar o si reagendó. De ahí se desprende todo lo demás.',[['f','VG·12']]],
@@ -201,7 +207,7 @@ var S=[
 ['cl','Paga una parte','Por transferencia, efectivo o terminal.',[]],
 ['hu','El asesor lo registra','Anota cuánto dejó y para cuándo se compromete a completar.',[['f','VG·12']]],
 ['hl','Se le manda a firmar el aviso de privacidad','Su tarjeta queda en la columna de abonando, con su saldo a la vista.',[['f','VG·11']]],
-['hl','Mientras tenga saldo','Recordatorios de pago hasta que liquide. Si pasan 30 días sin pagar ni responder, queda como trunco con su historial.',[['f','VG·28 · VG·29'],['p','vg_recordatorio_saldo']]]]],
+['hl','Mientras tenga saldo','El día que se comprometió a pagar le llega su recordatorio, y siguen hasta que liquide. Si pasan 30 días sin pagar ni responder, queda como trunco con su historial.',[['f','VG·28 · VG·29'],['p','vg_recordatorio_saldo']]]]],
 ['10','Liquidación','Cuando termina de pagar',[
 ['hu','El asesor registra el último pago','El saldo llega a cero.',[['f','VG·12']]],
 ['hl','Se le manda la carta compromiso','Ahí viene su paquete, su monto y el plazo. Al firmarla, la venta queda cerrada.',[['f','VG·11']]],
@@ -209,10 +215,11 @@ var S=[
 ['hl','Mensaje de felicitación','Se le confirma que su trámite arranca y se verifica que recibió todo.',[['p','vg_felicitacion_liquidacion']]]]],
 ['11','Trámite','Lo lleva el equipo de MyVisaGo',[
 ['hu','Legal procesa el expediente','Pago de derechos y gestión de la cita.',[]],
-['hl','Cuando ya hay fecha definitiva','Se le avisa al cliente solo esa fecha, la última, para que no se confunda con las tentativas.',[]]]],
-['12','Check-in','Una semana antes de su entrevista',[
-['hl','Se le invita a agendar su Check-in','Por WhatsApp, eligiendo horario en el mismo chat.',[]],
-['hu','Check-in presencial','Media hora, con una persona. Solo acomodo de documentos.',[]]]]
+['hu','Legal registra la fecha definitiva','Llena un formulario corto con el teléfono del cliente y la fecha. No tiene que entrar al sistema.',[['p','Formulario: Fecha definitiva']]],
+['hl','Cuando ya hay fecha definitiva','Se le avisa al cliente solo esa fecha, la última, para que no se confunda con las tentativas.',[['f','VG·31'],['p','vg_fecha_definitiva']]]]],
+['12','Check-in','Una semana antes de su cita de huellas',[
+['hl','Se le invita a agendar su Check-in','Por WhatsApp, eligiendo horario según disponibilidad.',[]],
+['hu','Check-in presencial','Media hora, con una persona. Solo acomodo de documentos. Si no llega, no se reagenda.',[]]]]
 ];
 var flt='all';
 function draw(){
