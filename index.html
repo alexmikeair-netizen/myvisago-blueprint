@@ -129,6 +129,7 @@ footer{color:var(--gris);font-size:12px;margin-top:44px;border-top:1px solid var
 <tr><td class="cod">VG·14</td><td>Asistió y no hay reporte</td><td>Le recuerda al asesor que falta su reporte</td></tr>
 <tr><td class="cod">VG·32</td><td>Un Expert aparta su cita</td><td>Le manda el enlace de pago. Con el pago confirma la cita; sin pago en 24 horas, libera el horario</td></tr>
 <tr><td class="cod">VG·33</td><td>Un Expert asistió</td><td>A los 3 días hábiles revisa que se haya entregado su expediente y le avisa que está listo</td></tr>
+<tr><td class="cod">VG·35</td><td>Alguien llama sin tener cita</td><td>Si quiere agendar o pide una persona, le deja la tarea a su asesor para que le llame</td></tr>
 <tr><td class="cod">VG·31</td><td>Legal registra la fecha definitiva</td><td>Le avisa al cliente solo esa fecha y lo invita a agendar su Check-in. Es de la segunda etapa</td></tr>
 </table>
 
@@ -252,7 +253,7 @@ var S=[
 ['voz','Sofía llama otra vez, 10:00 am','Solo para saber si va, si quiere cambiarla o si ya no va. Dura menos de un minuto. También llama en domingo, así las citas del martes quedan confirmadas.',[['f','VG·06'],['p','DAPTA']]],
 ['hl','Según lo que contestó','Si confirma, se le agradece; si quiere cambiar, se le mandan horarios; si cancela, se libera su lugar de inmediato.',[['p','vg_cita_confirmada'],['p','vg_cambio_horario'],['p','vg_cita_cancelada']]],
 ['hl','6:00 pm, a quien no contestó','WhatsApp con tres botones. Se le avisa que, si no confirma antes de las 8 am del día siguiente, su cita se cancela.',[['p','vg_confirma_asistencia']]],
-['voz','Si el cliente llama con dudas','Cuando marca al número para dudas le contesta otro agente: resuelve, confirma y, si le preguntan el precio, lo dice.',[['p','Número por definir']]]]],
+['voz','Si el cliente llama','Si marca a cualquiera de las 7 líneas le contesta Sofía: confirma, cambia o cancela su cita, resuelve dudas y, si ya se sabe su caso, le dice el precio. Si quiere agendar o pide una persona, le avisa a su asesor para que le llame. Entra en la segunda fase de DAPTA.',[['f','VG·35'],['p','DAPTA']]]]],
 ['6','Un día antes','Recordatorio o liberación',[
 ['hl','8:00 am','Al que confirmó o mostró interés le llega su recordatorio con la hora y la dirección.',[['f','VG·08'],['p','vg_recordatorio_manana']]],
 ['hl','Al que nunca respondió','Se le avisa que se liberó su lugar y se le deja la puerta abierta. Queda un día completo para que otro cliente ocupe ese horario.',[['f','VG·08'],['p','vg_cita_liberada']]]]],
