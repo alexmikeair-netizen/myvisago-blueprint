@@ -67,7 +67,7 @@ footer{color:var(--gris);font-size:12px;margin-top:44px;border-top:1px solid var
 <p class="sub">El camino completo del cliente, desde que ve un reel hasta que liquida su servicio. En cada paso: quién lo hace, qué se envía, con qué automatización y con qué mensaje.</p>
 </header>
 
-<div class="aviso"><strong>Propuesta para revisar.</strong> Todavía no está construido: primero se aprueba este recorrido y después se conecta. Lo orgánico de las 5 ciudades entra aquí; la pauta actual no se toca.<br><br><strong>Al 11 de noviembre:</strong> al cliente se le atiende en la red donde llegó y WhatsApp entra cuando ya agendó, por la línea de su ciudad. La confirmación se adelanta a dos días antes, para que quede un día de colchón y se pueda volver a llenar el lugar. Las llamadas las hace el agente de voz de DAPTA. Y entra un quinto caso, Expert.</div>
+<div class="aviso"><strong>Propuesta para revisar.</strong> Todavía no está construido: primero se aprueba este recorrido y después se conecta. Lo orgánico de las 5 ciudades entra aquí; la pauta actual no se toca.<br><br><strong>Al 11 de noviembre:</strong> al cliente se le atiende en la red donde llegó y WhatsApp entra cuando ya agendó, por la línea de su ciudad. La confirmación se adelanta a dos días antes, para que quede un día de colchón y se pueda volver a llenar el lugar. Las llamadas las hace el agente de voz de DAPTA. Y entra un quinto caso, Expert, con su cita de pago.</div>
 
 <div class="ciudades"><span>Guadalajara</span><span>Morelia</span><span>Aguascalientes</span><span>León</span><span>Querétaro</span></div>
 
@@ -176,9 +176,27 @@ footer{color:var(--gris);font-size:12px;margin-top:44px;border-top:1px solid var
 <tr><td class="n">Primera vez</td><td>Nunca ha tenido, vencida hace más de 10 meses, o la sacó siendo menor de edad</td><td>Acelerador Consular, cita en menos de 120 días hábiles</td></tr>
 <tr><td class="n">Visa negada</td><td>Ya se la negaron, sin antecedentes</td><td>Acelerador Consular</td></tr>
 <tr><td class="n">Perdón</td><td>Estuvo ilegal, lo deportaron, trabajó allá o mintió en un trámite</td><td>Perdón AXIS Waiver, con abogado</td></tr>
-<tr><td class="n">Expert</td><td>Todo lo que no es visa de turista: inversionista, trabajo, estudios, residencia, ciudadanía</td><td>Lo atiende la división Expert y <strong>su consultoría sí se cobra</strong>, por adelantado. Si contrata, se le toma a cuenta</td></tr>
+<tr><td class="n">Expert</td><td>Todo trámite de Estados Unidos que no es la visa de turista: inversionista, trabajo con empleador, estudios, residencia, ciudadanía, pasaporte americano</td><td>Lo atiende la división Expert. <strong>La cita cuesta $1,000 y se paga por adelantado.</strong> Si contrata, se le bonifica completo</td></tr>
 </table>
-<p class="secsub">Un detalle que cambia a quién mandamos a dónde: con visa de turista sí se puede ir a Estados Unidos a entrevistas de trabajo; lo que no se puede es trabajar. Quien va a entrevistas sigue siendo visa de turista. Quien ya tiene trabajo allá es Expert.</p>
+<h2 class="sec">La visa de trabajo: de descarte a venta</h2>
+<p class="secsub">Es la pregunta que más llega y la que hoy se pierde. La visa de trabajo no se tramita desde México: la inicia la empresa que va a contratar a la persona, allá. Como casi nadie tiene empleador, el bot deja de despedirlos y les ofrece lo que sí les sirve.</p>
+<table>
+<tr><th>Lo que contesta</th><th>Qué hace el bot</th><th>En qué termina</th></tr>
+<tr><td class="n">No tiene empleador</td><td>Le explica cómo funciona y le ofrece la visa de turista para ir a entrevistas de trabajo y conseguir quién lo contrate</td><td>Vuelve a los 4 casos normales. Queda marcado para medir cuántos compraron así</td></tr>
+<tr><td class="n">Sí tiene empleador</td><td>Lo pasa a la división Expert</td><td>Cita de $1,000, pagada por adelantado</td></tr>
+<tr><td class="n">Va a entrevistas</td><td>Lo califica normal</td><td>Visa de turista</td></tr>
+</table>
+<p class="secsub">Con la visa de turista se puede entrar a Estados Unidos a tener entrevistas de trabajo. Lo único que no se puede es trabajar, o sea recibir un pago.</p>
+
+<h2 class="sec">Cómo funciona una cita de Expert</h2>
+<table>
+<tr><th>Paso</th><th>Qué pasa</th></tr>
+<tr><td class="n">1</td><td>El bot detecta que no es visa de turista y le explica el modelo: cada caso es distinto, no hay precios de lista</td></tr>
+<tr><td class="n">2</td><td>Le llega el enlace para pagar los $1,000 y apartar su cita. Sin pago no se agenda</td></tr>
+<tr><td class="n">3</td><td>Acude a la oficina y se recaba su información</td></tr>
+<tr><td class="n">4</td><td>Unos días después, el equipo legal le entrega su expediente con lo que puede hacer</td></tr>
+<tr><td class="n">5</td><td>Si decide hacer el trámite, los $1,000 se le bonifican. Si no, el cobro se queda, porque el expediente ya se armó</td></tr>
+</table>
 
 <h2 class="sec">Cómo se filtra el no-show</h2>
 <table>
@@ -203,7 +221,8 @@ var S=[
 ['hl','Se crea el contacto y se abre su tarjeta','Queda registrado de qué red y de qué anuncio vino. Sirve para saber qué contenido trae clientes que pagan.',[['f','VG·01'],['p','Etapa: Lead nuevo']]]]],
 ['2','El bot califica','Solo agenda quien sí es candidato',[
 ['bot','Pregunta la ciudad','Atiende las 5. Con eso ya sabe a qué oficina y a qué calendario mandarlo.',[]],
-['bot','Pregunta el caso y los 4 filtros','Visa vigente o vencida, edad al tramitar, estancia irregular y deportación. Renovación solo con visa vigente o máximo 10 meses vencida y obtenida de adulto; si la sacó siendo menor de edad, primera vez; antecedentes o presencia ilegal, perdón. Si no es visa de turista, es Expert. Con eso receta una sola opción, no un menú.',[['p','Renovación · Primera vez · Visa negada · Perdón']]],
+['bot','Pregunta si es visa de turista u otro trámite','Lo que no es visa de turista pasa a MyVisaGo Expert, donde la cita cuesta $1,000. Si pide visa de trabajo, antes pregunta si ya tiene empleador: si no lo tiene, le ofrece la de turista para ir a entrevistas.',[['p','Avatar: Expert']]],
+['bot','Pregunta el caso y los 4 filtros','Visa vigente o vencida, edad al tramitar, estancia irregular y deportación. Renovación solo con visa vigente o máximo 10 meses vencida y obtenida de adulto; si la sacó siendo menor de edad, primera vez; antecedentes o presencia ilegal, perdón. Con eso receta una sola opción, no un menú.',[['p','Renovación · Primera vez · Visa negada · Perdón']]],
 ['hl','Su tarjeta se mueve a su caso','Cada caso tiene su columna, así se ve en qué va cada quien.',[['f','VG·26']]]]],
 ['3','Agenda','La cita queda en el calendario de su ciudad',[
 ['bot','Le manda la landing de su caso','Es el camino principal: ahí ve el video, entiende su situación, elige primero su sucursal y luego su horario. De paso alimenta el píxel para la pauta.',[['p','Método: Landing']]],
