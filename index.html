@@ -67,7 +67,7 @@ footer{color:var(--gris);font-size:12px;margin-top:44px;border-top:1px solid var
 <p class="sub">El camino completo del cliente, desde que ve un reel hasta que liquida su servicio. En cada paso: quién lo hace, qué se envía, con qué automatización y con qué mensaje.</p>
 </header>
 
-<div class="aviso"><strong>Propuesta para revisar.</strong> Todavía no está construido: primero se aprueba este recorrido y después se conecta. Lo orgánico de las 5 ciudades entra aquí; la pauta actual no se toca.<br><br><strong>Cambios del 8 de noviembre:</strong> al cliente se le atiende en la red donde llegó, WhatsApp entra cuando ya agendó y sale por una sola línea, y la confirmación se adelanta a dos días antes para que quede un día de colchón y se pueda volver a llenar el lugar.</div>
+<div class="aviso"><strong>Propuesta para revisar.</strong> Todavía no está construido: primero se aprueba este recorrido y después se conecta. Lo orgánico de las 5 ciudades entra aquí; la pauta actual no se toca.<br><br><strong>Al 11 de noviembre:</strong> al cliente se le atiende en la red donde llegó y WhatsApp entra cuando ya agendó, por la línea de su ciudad. La confirmación se adelanta a dos días antes, para que quede un día de colchón y se pueda volver a llenar el lugar. Las llamadas las hace el agente de voz de DAPTA. Y entra un quinto caso, Expert.</div>
 
 <div class="ciudades"><span>Guadalajara</span><span>Morelia</span><span>Aguascalientes</span><span>León</span><span>Querétaro</span></div>
 
@@ -129,9 +129,10 @@ footer{color:var(--gris);font-size:12px;margin-top:44px;border-top:1px solid var
 <h2 class="sec">Lo que se agrega</h2>
 <table>
 <tr><th>Pieza</th><th>Cuántas</th><th>Para qué</th></tr>
-<tr><td class="n">WhatsApp</td><td class="n">1</td><td>Una sola línea de Guadalajara (33), solo para las confirmaciones, los recordatorios y las plantillas de las 5 ciudades</td></tr>
-<tr><td class="n">Número de llamadas</td><td class="n">Por definir</td><td>Se define con DAPTA: si sale con números aleatorios o con lada local</td></tr>
-<tr><td class="n">Agentes de voz</td><td class="n">4</td><td>Uno mide el interés al agendar, otro confirma dos días antes, otro recupera al que no llegó y otro contesta cuando el cliente llama. Los mismos para las 5 ciudades. Están parados hasta el onboarding de DAPTA</td></tr>
+<tr><td class="n">WhatsApp</td><td class="n">6 conectadas</td><td>Una por ciudad, más la general de Guadalajara y la de atención en línea. Así los recordatorios llegan con la lada de cada plaza</td></tr>
+<tr><td class="n">Número de llamadas</td><td class="n">Por definir</td><td>La línea desde la que marca el agente de voz. Se define con DAPTA el jueves</td></tr>
+<tr><td class="n">Agentes de voz</td><td class="n">2 para arrancar</td><td>Uno mide el interés al agendar y otro confirma dos días antes, los mismos para las 5 ciudades. Los hace DAPTA. El que recupera al que no llegó y el que contesta llamadas entran después</td></tr>
+<tr><td class="n">Mini flujos de envío</td><td class="n">14</td><td>Cada mensaje sale por la línea de la ciudad de la cita. Un mini flujo por plantilla decide de cuál número sale</td></tr>
 <tr><td class="n">Bot de chat</td><td class="n">1</td><td>Pregunta la ciudad, califica, manda la landing y agenda, en la red donde llegó el cliente</td></tr>
 <tr><td class="n">Calendarios</td><td class="n">6</td><td>Uno por ciudad, con su horario y su cupo, más el online, solo para Renovación y nunca de entrada</td></tr>
 </table>
@@ -146,6 +147,38 @@ footer{color:var(--gris);font-size:12px;margin-top:44px;border-top:1px solid var
 <tr><td>Querétaro</td><td>Paulina</td><td class="n">1</td><td class="n">9:00 – 17:00</td><td class="n">9:00 – 14:00</td></tr>
 </table>
 <p class="secsub">Citas de 1 hora y con 4 días de anticipación como máximo, porque las citas lejanas no llegan. Domingo cerrado, aunque el agente de voz sí llama ese día para confirmar las citas del martes.</p>
+
+<h2 class="sec">El agente de voz</h2>
+<p class="secsub">Lo construye DAPTA y se llama Sofía. Habla español de México y las llamadas quedan grabadas. No vende ni asesora: confirma y mide. Lo que diga la persona queda escrito en el sistema, y a partir de ahí todo lo demás se dispara solo.</p>
+<table>
+<tr><th>Agente</th><th>Cuándo llama</th><th>Para qué</th><th>Dura</th></tr>
+<tr><td class="n">Sofía · Triaje</td><td>5 minutos después de agendar</td><td>Confirma que va a llegar, pregunta para cuándo quiere su visa y qué podría impedirle venir</td><td class="n">menos de 2 min</td></tr>
+<tr><td class="n">Sofía · Confirmación</td><td>Dos días antes, 10 am</td><td>Si va, si quiere cambiarla o si ya no va</td><td class="n">menos de 1 min</td></tr>
+</table>
+<p class="secsub">Más adelante entran dos más: uno que llama al que no llegó, el mismo día, y uno que contesta cuando el cliente devuelve la llamada.</p>
+<table>
+<tr><th>Lo que contesta la persona</th><th>Qué pasa</th><th>Su tarjeta</th></tr>
+<tr><td>Sí voy</td><td>Le llega su confirmación por WhatsApp</td><td class="n">Confirmó</td></tr>
+<tr><td>Quiero cambiarla</td><td>Se libera el horario y el bot le ofrece otros</td><td class="n">Regresa a su caso</td></tr>
+<tr><td>Ya no voy</td><td>Se cancela y se le deja la puerta abierta</td><td class="n">Regresa a su caso</td></tr>
+<tr><td>Contesta con dudas</td><td>Queda anotado qué le preocupa; sigue el ciclo normal</td><td class="n">Sin cambio</td></tr>
+<tr><td>No contesta o buzón</td><td>A las 6 pm le llega el WhatsApp con botones</td><td class="n">Sin cambio</td></tr>
+<tr><td>Pide una persona</td><td>Tarea para el asesor de su ciudad</td><td class="n">Sin cambio</td></tr>
+<tr><td>No me llamen</td><td>No se le vuelve a llamar; sigue por WhatsApp</td><td class="n">Sin cambio</td></tr>
+</table>
+<p class="secsub">De cada llamada se guarda el nivel de compromiso, una nota de lo que dijo, la grabación y la duración. Eso es lo que permite saber a quién vale la pena insistirle. Si el agente se apaga, el sistema sigue funcionando con los mensajes de WhatsApp.</p>
+
+<h2 class="sec">Los cinco casos</h2>
+<p class="secsub">El bot receta uno solo, no presenta un menú. Los cuatro primeros son de visa de turista y su consultoría es gratis.</p>
+<table>
+<tr><th>Caso</th><th>Quién entra</th><th>Qué recibe</th></tr>
+<tr><td class="n">Renovación</td><td>Visa vigente o vencida máximo 10 meses, obtenida siendo mayor de edad</td><td>Renovación Express, cita en 15 días, solo fotos y huellas</td></tr>
+<tr><td class="n">Primera vez</td><td>Nunca ha tenido, vencida hace más de 10 meses, o la sacó siendo menor de edad</td><td>Acelerador Consular, cita en menos de 120 días hábiles</td></tr>
+<tr><td class="n">Visa negada</td><td>Ya se la negaron, sin antecedentes</td><td>Acelerador Consular</td></tr>
+<tr><td class="n">Perdón</td><td>Estuvo ilegal, lo deportaron, trabajó allá o mintió en un trámite</td><td>Perdón AXIS Waiver, con abogado</td></tr>
+<tr><td class="n">Expert</td><td>Todo lo que no es visa de turista: inversionista, trabajo, estudios, residencia, ciudadanía</td><td>Lo atiende la división Expert y <strong>su consultoría sí se cobra</strong>, por adelantado. Si contrata, se le toma a cuenta</td></tr>
+</table>
+<p class="secsub">Un detalle que cambia a quién mandamos a dónde: con visa de turista sí se puede ir a Estados Unidos a entrevistas de trabajo; lo que no se puede es trabajar. Quien va a entrevistas sigue siendo visa de turista. Quien ya tiene trabajo allá es Expert.</p>
 
 <h2 class="sec">Cómo se filtra el no-show</h2>
 <table>
@@ -170,7 +203,7 @@ var S=[
 ['hl','Se crea el contacto y se abre su tarjeta','Queda registrado de qué red y de qué anuncio vino. Sirve para saber qué contenido trae clientes que pagan.',[['f','VG·01'],['p','Etapa: Lead nuevo']]]]],
 ['2','El bot califica','Solo agenda quien sí es candidato',[
 ['bot','Pregunta la ciudad','Atiende las 5. Con eso ya sabe a qué oficina y a qué calendario mandarlo.',[]],
-['bot','Pregunta el caso y los 4 filtros','Visa vigente o vencida, edad al tramitar, estancia irregular y deportación. Renovación solo con visa vigente o máximo 10 meses vencida y obtenida de adulto; si la sacó siendo menor de edad, primera vez; antecedentes o presencia ilegal, perdón. Con eso receta una sola opción, no un menú.',[['p','Renovación · Primera vez · Visa negada · Perdón']]],
+['bot','Pregunta el caso y los 4 filtros','Visa vigente o vencida, edad al tramitar, estancia irregular y deportación. Renovación solo con visa vigente o máximo 10 meses vencida y obtenida de adulto; si la sacó siendo menor de edad, primera vez; antecedentes o presencia ilegal, perdón. Si no es visa de turista, es Expert. Con eso receta una sola opción, no un menú.',[['p','Renovación · Primera vez · Visa negada · Perdón']]],
 ['hl','Su tarjeta se mueve a su caso','Cada caso tiene su columna, así se ve en qué va cada quien.',[['f','VG·26']]]]],
 ['3','Agenda','La cita queda en el calendario de su ciudad',[
 ['bot','Le manda la landing de su caso','Es el camino principal: ahí ve el video, entiende su situación, elige primero su sucursal y luego su horario. De paso alimenta el píxel para la pauta.',[['p','Método: Landing']]],
@@ -179,13 +212,13 @@ var S=[
 ['bot','Si agendó en el chat, le pide su WhatsApp','"Para mandarte tu confirmación y la dirección." Sin teléfono no hay recordatorios, porque en Facebook e Instagram solo se le puede escribir 24 horas después de su último mensaje.',[['p','Campo: Teléfono']]],
 ['bot','Si no puede ir a la oficina','En línea solo existe para Renovación y nunca se ofrece de entrada: es la última opción si no puede ir, lo pregunta o vive donde no hay oficina. En los otros casos se le invita a la oficina más cercana.',[['p','Calendario Online']]],
 ['hl','Se detecta su oficina','Según el calendario donde agendó, se carga la dirección, el mapa y el asesor que lo va a atender.',[['f','VG·00']]],
-['hl','Confirmación inmediata','Desde aquí entra WhatsApp. Fecha, hora, dirección de su oficina y botón de mapa. También le avisa que va a recibir una llamada.',[['f','VG·03'],['p','vg_confirmacion_cita']]]]],
+['hl','Confirmación inmediata','Desde aquí entra WhatsApp, por la línea de su ciudad. Fecha, hora, dirección de su oficina y botón de mapa. También le avisa que va a recibir una llamada.',[['f','VG·03'],['p','vg_confirmacion_cita']]]]],
 ['4','Primera llamada','A los 5 minutos de agendar',[
-['voz','El agente de voz lo llama','Confirma que va a llegar, pregunta para cuándo quiere su visa y si algo le podría impedir venir. No vende; si le preguntan el precio, lo dice.',[['f','VG·04']]],
+['voz','Sofía lo llama','Confirma que va a llegar, pregunta para cuándo quiere su visa y si algo le podría impedir venir. No vende ni asesora su caso.',[['f','VG·04'],['p','DAPTA']]],
 ['voz','Mide qué tan comprometido está','Queda marcado como alto, medio o bajo. Eso define a quién vale la pena insistirle y a quién no.',[['f','VG·30']]],
 ['hl','Le llega su guía de preparación','Un PDF con lo que debe traer y los errores más comunes. Llega preparado y valora más su cita.',[['f','VG·03'],['p','vg_material_preparacion']]]]],
 ['5','Confirmación','Dos días antes',[
-['voz','Segunda llamada, 10:00 am','Solo para saber si va, si quiere cambiarla o si ya no va. Dura menos de un minuto. También llama en domingo, así las citas del martes quedan confirmadas.',[['f','VG·06']]],
+['voz','Sofía llama otra vez, 10:00 am','Solo para saber si va, si quiere cambiarla o si ya no va. Dura menos de un minuto. También llama en domingo, así las citas del martes quedan confirmadas.',[['f','VG·06'],['p','DAPTA']]],
 ['hl','Según lo que contestó','Si confirma, se le agradece; si quiere cambiar, se le mandan horarios; si cancela, se libera su lugar de inmediato.',[['p','vg_cita_confirmada'],['p','vg_cambio_horario'],['p','vg_cita_cancelada']]],
 ['hl','6:00 pm, a quien no contestó','WhatsApp con tres botones. Se le avisa que, si no confirma antes de las 8 am del día siguiente, su cita se cancela.',[['p','vg_confirma_asistencia']]],
 ['voz','Si el cliente llama con dudas','Cuando marca al número para dudas le contesta otro agente: resuelve, confirma y, si le preguntan el precio, lo dice.',[['p','Número por definir']]]]],
