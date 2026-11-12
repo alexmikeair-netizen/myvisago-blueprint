@@ -87,7 +87,7 @@ footer{color:var(--gris);font-size:12px;margin-top:44px;border-top:1px solid var
 <tr><td class="pl">vg_cita_confirmada</td><td><span class="pill util">Utilidad</span></td><td>Cuando confirma por llamada que viene</td><td class="cod">VG·30</td></tr>
 <tr><td class="pl">vg_cambio_horario</td><td><span class="pill util">Utilidad</span></td><td>Cuando pide cambiar de día, para que elija otro horario</td><td class="cod">VG·30</td></tr>
 <tr><td class="pl">vg_cita_cancelada</td><td><span class="pill util">Utilidad</span></td><td>Cuando cancela por llamada: se libera su lugar y queda la puerta abierta</td><td class="cod">VG·30</td></tr>
-<tr><td class="pl">vg_cita_liberada</td><td><span class="pill util">Utilidad</span></td><td>8 am del día anterior a su cita, a quien nunca respondió: se libera su lugar</td><td class="cod">VG·08</td></tr>
+<tr><td class="pl">vg_cita_liberada_con_opcion</td><td><span class="pill util">Utilidad</span></td><td>8 am del día anterior a su cita, a quien nunca respondió: se libera su lugar</td><td class="cod">VG·08</td></tr>
 <tr><td class="pl">vg_recordatorio_manana</td><td><span class="pill util">Utilidad</span></td><td>8 am del día anterior, a quien confirmó o mostró interés</td><td class="cod">VG·08</td></tr>
 <tr><td class="pl">vg_recordatorio_dia_cita</td><td><span class="pill util">Utilidad</span></td><td>8 am del día de la cita, con el botón "Ya llegué"</td><td class="cod">VG·08</td></tr>
 <tr><td class="pl">vg_no_asistio</td><td><span class="pill util">Utilidad</span></td><td>Cuando no llegó, para ofrecerle otro horario (Primera vez, Visa negada y Perdón)</td><td class="cod">VG·10</td></tr>
@@ -256,7 +256,7 @@ var S=[
 ['voz','Si el cliente llama','Si marca a cualquiera de las 7 líneas le contesta Sofía: confirma, cambia o cancela su cita, resuelve dudas y, si ya se sabe su caso, le dice el precio. Si quiere agendar o pide una persona, le avisa a su asesor para que le llame. Entra en la segunda fase de DAPTA.',[['f','VG·35'],['p','DAPTA']]]]],
 ['6','Un día antes','Recordatorio o liberación',[
 ['hl','8:00 am','Al que confirmó o mostró interés le llega su recordatorio con la hora y la dirección.',[['f','VG·08'],['p','vg_recordatorio_manana']]],
-['hl','Al que nunca respondió','Se le avisa que se liberó su lugar y se le deja la puerta abierta. Queda un día completo para que otro cliente ocupe ese horario.',[['f','VG·08'],['p','vg_cita_liberada']]]]],
+['hl','Al que nunca respondió','Se le avisa que se liberó su lugar y se le deja la puerta abierta. Queda un día completo para que otro cliente ocupe ese horario.',[['f','VG·08'],['p','vg_cita_liberada_con_opcion']]]]],
 ['7','Llegada','El pase de lista',[
 ['hl','8:00 am del día de la cita','A quien sigue en pie le llega su recordatorio con la dirección y el botón "Ya llegué".',[['f','VG·08'],['p','vg_recordatorio_dia_cita']]],
 ['cl','Escanea el QR de recepción o toca "Ya llegué"','Se abre WhatsApp con el mensaje listo; solo lo envía.',[]],
