@@ -67,7 +67,7 @@ footer{color:var(--gris);font-size:12px;margin-top:44px;border-top:1px solid var
 <p class="sub">El camino completo del cliente, desde que ve un reel hasta que liquida su servicio. En cada paso: quién lo hace, qué se envía, con qué automatización y con qué mensaje.</p>
 </header>
 
-<div class="aviso"><strong>Propuesta para revisar.</strong> Todavía no está construido: primero se aprueba este recorrido y después se conecta. Lo orgánico de las 5 ciudades entra aquí; la pauta actual no se toca.<br><br><strong>Al 11 de noviembre:</strong> al cliente se le atiende en la red donde llegó y WhatsApp entra cuando ya agendó, por la línea de su ciudad. La confirmación se adelanta a dos días antes, para que quede un día de colchón y se pueda volver a llenar el lugar. Las llamadas las hace el agente de voz de DAPTA. Y entra un quinto caso, Expert, con su cita de pago.<br><br><strong>Un solo tablero de ventas, y cada sucursal ve solo lo suyo:</strong> en cuanto el cliente dice su ciudad, el lead queda asignado a esa sucursal. Morelia no ve los de Guadalajara, y ustedes ven todo en un mismo tablero.</div>
+<div class="aviso"><strong>Estado al 18 de noviembre:</strong> las etapas 1 a 6 ya están construidas en High Level y probadas con un contacto de prueba: los mensajes, los mini flujos por ciudad, la asignación por sucursal, la confirmación, el no-show, el reporte, la firma y la cobranza. Falta actualizar el bot, conectar el agente de voz de DAPTA y la pasarela de pago. Lo orgánico de las 5 ciudades entra aquí; la pauta actual no se toca.<br><br><strong>Al 17 de noviembre, en línea para todos:</strong> la consultoría en línea ya no es solo para Renovación. Vale para los cinco casos y para las 5 ciudades, por videollamada, y la atiende Erika. Se ofrece a quien vive donde no hay oficina, a quien no puede ir y a quien no llegó a su cita en la oficina; a quien vive cerca de una oficina nunca se le ofrece de entrada.<br><br><strong>Al 11 de noviembre:</strong> al cliente se le atiende en la red donde llegó y WhatsApp entra cuando ya agendó, por la línea de su ciudad. La confirmación se adelanta a dos días antes, para que quede un día de colchón y se pueda volver a llenar el lugar. Las llamadas las hace el agente de voz de DAPTA. Y entra un quinto caso, Expert, con su cita de pago.<br><br><strong>Un solo tablero de ventas, y cada sucursal ve solo lo suyo:</strong> en cuanto el cliente dice su ciudad, el lead queda asignado a esa sucursal. Morelia no ve los de Guadalajara, y ustedes ven todo en un mismo tablero.</div>
 
 <div class="ciudades"><span>Guadalajara</span><span>Morelia</span><span>Aguascalientes</span><span>León</span><span>Querétaro</span></div>
 
@@ -78,26 +78,27 @@ footer{color:var(--gris);font-size:12px;margin-top:44px;border-top:1px solid var
 <main id="bp"></main>
 
 <h2 class="sec">Los mensajes de WhatsApp</h2>
-<p class="secsub">Son 22 y sirven igual para las 5 ciudades y el online: la dirección y el mapa se llenan solos según la oficina de cada cita. Meta tiene que aprobarlos antes de usarlos, y tarda alrededor de 24 horas. Los 20 de utilidad son los baratos y salen por la línea de la ciudad de la cita. Los 2 de marketing cuestan más, son los de recuperación y salen solo por la línea general, para que un problema con ellos no deje a ninguna ciudad sin recordatorios. Los 3 de Expert se suben cuando esté la pasarela de pago.</p>
+<p class="secsub">Sirven igual para las 5 ciudades y el online: la dirección, el mapa y el enlace de la videollamada se llenan solos según la cita. Cada uno sale por la línea de la ciudad de la cita, y los de en línea por la línea en línea. <strong>20 ya están aprobados por Meta y funcionando.</strong> Meta decidió que 8 son de marketing (cuestan más y tienen un límite de envíos por persona); los demás son de utilidad. La guía de preparación es el único mensaje que tiene dos versiones, una para la oficina y otra para la videollamada, porque la imagen va dentro del mensaje. Los 3 de Expert se suben cuando esté la pasarela de pago.</p>
 <table>
 <tr><th>Mensaje</th><th>Tipo</th><th>Cuándo sale</th><th>Flujo</th></tr>
 <tr><td class="pl">vg_confirmacion_cita</td><td><span class="pill util">Utilidad</span></td><td>Al agendar y al cambiar de fecha: día, hora, dirección y mapa</td><td class="cod">VG·03</td></tr>
-<tr><td class="pl">vg_material_preparacion</td><td><span class="pill util">Utilidad</span></td><td>5 minutos después: la guía en PDF para que llegue preparado</td><td class="cod">VG·03</td></tr>
+<tr><td class="pl">vg_material_preparacion_sucursal</td><td><span class="pill mkt">Marketing</span></td><td>5 minutos después: la guía de preparación en imagen, dentro del mismo mensaje, para que llegue preparado a la oficina</td><td class="cod">VG·03</td></tr>
+<tr><td class="pl">vg_material_preparacion_en_linea</td><td><span class="pill mkt">Marketing</span></td><td>Lo mismo para la cita en línea: cómo prepararse para la videollamada (conexión, batería, lugar tranquilo, documentos a la mano)</td><td class="cod">VG·03</td></tr>
 <tr><td class="pl">vg_confirma_asistencia</td><td><span class="pill util">Utilidad</span></td><td>6 pm de dos días antes, a quien no contestó la llamada. Le da hasta las 8 am del día siguiente</td><td class="cod">VG·06</td></tr>
 <tr><td class="pl">vg_cita_confirmada</td><td><span class="pill util">Utilidad</span></td><td>Cuando confirma por llamada que viene</td><td class="cod">VG·30</td></tr>
-<tr><td class="pl">vg_cambio_horario</td><td><span class="pill util">Utilidad</span></td><td>Cuando pide cambiar de día, para que elija otro horario</td><td class="cod">VG·30</td></tr>
+<tr><td class="pl">vg_cambio_horario</td><td><span class="pill mkt">Marketing</span></td><td>Cuando pide cambiar de día, para que elija otro horario</td><td class="cod">VG·30</td></tr>
 <tr><td class="pl">vg_cita_cancelada</td><td><span class="pill util">Utilidad</span></td><td>Cuando cancela por llamada: se libera su lugar y queda la puerta abierta</td><td class="cod">VG·30</td></tr>
-<tr><td class="pl">vg_cita_liberada_con_opcion</td><td><span class="pill util">Utilidad</span></td><td>8 am del día anterior a su cita, a quien nunca respondió: se libera su lugar</td><td class="cod">VG·08</td></tr>
+<tr><td class="pl">vg_cita_liberada_con_opcion</td><td><span class="pill mkt">Marketing</span></td><td>8 am del día anterior a su cita, a quien nunca respondió: se libera su lugar</td><td class="cod">VG·08</td></tr>
 <tr><td class="pl">vg_recordatorio_manana</td><td><span class="pill util">Utilidad</span></td><td>8 am del día anterior, a quien confirmó o mostró interés</td><td class="cod">VG·08</td></tr>
 <tr><td class="pl">vg_recordatorio_dia_cita</td><td><span class="pill util">Utilidad</span></td><td>8 am del día de la cita, con el botón "Ya llegué"</td><td class="cod">VG·08</td></tr>
-<tr><td class="pl">vg_no_asistio</td><td><span class="pill util">Utilidad</span></td><td>Cuando no llegó, para ofrecerle otro horario (Primera vez, Visa negada y Perdón)</td><td class="cod">VG·10</td></tr>
-<tr><td class="pl">vg_no_asistio_opcion_online</td><td><span class="pill util">Utilidad</span></td><td>Cuando no llegó y es Renovación: además de otro horario, se le ofrece en línea</td><td class="cod">VG·10</td></tr>
+<tr><td class="pl">vg_no_asistio</td><td><span class="pill mkt">Marketing</span></td><td>Cuando no llegó a su cita en línea, para ofrecerle otro horario</td><td class="cod">VG·10</td></tr>
+<tr><td class="pl">vg_no_asistio_opcion_online</td><td><span class="pill mkt">Marketing</span></td><td>Cuando no llegó a su cita en la oficina, cualquier caso: además de otro horario, se le ofrece en línea</td><td class="cod">VG·10</td></tr>
 <tr><td class="pl">vg_seguimiento_asesoria</td><td><span class="pill util">Utilidad</span></td><td>3 horas después de su cita: cómo le fue y si quedó alguna duda</td><td class="cod">VG·13</td></tr>
 <tr><td class="pl">vg_recordatorio_saldo</td><td><span class="pill util">Utilidad</span></td><td>Cuando tiene saldo pendiente, para la cobranza</td><td class="cod">VG·28</td></tr>
 <tr><td class="pl">vg_felicitacion_liquidacion</td><td><span class="pill util">Utilidad</span></td><td>Al liquidar: felicitación y confirmación de que recibió todo</td><td class="cod">VG·11</td></tr>
-<tr><td class="pl">vg_confirmacion_online</td><td><span class="pill util">Utilidad</span></td><td>Al agendar en línea, solo Renovación: sin oficina ni mapa</td><td class="cod">VG·03</td></tr>
+<tr><td class="pl">vg_confirmacion_online</td><td><span class="pill util">Utilidad</span></td><td>Al agendar en línea, cualquier caso: fecha, hora y el enlace de su videollamada</td><td class="cod">VG·03</td></tr>
 <tr><td class="pl">vg_cita_confirmada_online</td><td><span class="pill util">Utilidad</span></td><td>Cuando confirma por llamada su cita en línea</td><td class="cod">VG·30</td></tr>
-<tr><td class="pl">vg_recordatorio_online</td><td><span class="pill util">Utilidad</span></td><td>Un día antes y el día de la cita, en línea</td><td class="cod">VG·08</td></tr>
+<tr><td class="pl">vg_recordatorio_online</td><td><span class="pill util">Utilidad</span></td><td>Un día antes y el día de la cita, en línea, con el enlace de su videollamada</td><td class="cod">VG·08</td></tr>
 <tr><td class="pl">vg_retomar_cita</td><td><span class="pill mkt">Marketing</span></td><td>24 horas después de calificar, al que dejó su teléfono y no agendó. Sale por la línea general</td><td class="cod">VG·02</td></tr>
 <tr><td class="pl">vg_ultimo_intento</td><td><span class="pill mkt">Marketing</span></td><td>Al día 7, última invitación antes de dejarlo en paz. Sale por la línea general</td><td class="cod">VG·02</td></tr>
 <tr><td class="pl">vg_expert_cobro</td><td><span class="pill util">Utilidad</span></td><td>Expert, al apartar su cita: fecha, hora, costo de $1,500 y botón para pagar. Sin pago en 24 horas se libera</td><td class="cod">VG·32</td></tr>
@@ -110,16 +111,16 @@ footer{color:var(--gris);font-size:12px;margin-top:44px;border-top:1px solid var
 <table>
 <tr><th>Flujo</th><th>Arranca cuando</th><th>Qué hace</th></tr>
 <tr><td class="cod">VG·34</td><td>El bot sabe su ciudad</td><td>Asigna el lead a esa sucursal. Desde ese momento solo esa sucursal lo ve. Si después agenda en otra ciudad, lo reasigna solo</td></tr>
-<tr><td class="cod">VG·00</td><td>Se agenda una cita</td><td>Según el calendario, confirma su sucursal y carga la dirección y el mapa de esa oficina</td></tr>
+<tr><td class="cod">VG·00</td><td>Se agenda una cita</td><td>Según el calendario, confirma su sucursal y carga la dirección y el mapa de esa oficina, o la modalidad en línea. También deja listo el lugar de firma de sus documentos</td></tr>
 <tr><td class="cod">VG·01</td><td>Llega el primer mensaje</td><td>Crea el contacto, guarda de qué red y anuncio vino y abre su tarjeta</td></tr>
 <tr><td class="cod">VG·26</td><td>El bot termina de calificar</td><td>Mueve la tarjeta a la columna de su caso</td></tr>
-<tr><td class="cod">VG·03</td><td>Agenda o cambia su cita</td><td>Manda la confirmación y, 5 minutos después, la guía de preparación</td></tr>
+<tr><td class="cod">VG·03</td><td>Agenda o cambia su cita</td><td>Manda la confirmación y, 5 minutos después, la guía de preparación: la de oficina o la de videollamada</td></tr>
 <tr><td class="cod">VG·04</td><td>5 minutos después de agendar</td><td>Lanza la primera llamada del agente de voz. A Expert no, porque su cita la confirma el pago</td></tr>
 <tr><td class="cod">VG·30</td><td>Termina esa llamada</td><td>Según lo que haya dicho: confirma, cambia la fecha o cancela. Si cambia o cancela, su tarjeta regresa a su caso</td></tr>
 <tr><td class="cod">VG·06</td><td>Dos días antes, 10 am</td><td>Segunda llamada; si no contesta, WhatsApp a las 6 pm</td></tr>
 <tr><td class="cod">VG·08</td><td>Un día antes, 8 am</td><td>Recordatorio al comprometido, o libera el lugar del que nunca respondió. El día de la cita le manda el botón "Ya llegué"</td></tr>
 <tr><td class="cod">VG·09</td><td>Escanea el QR o toca "Ya llegué"</td><td>Registra su asistencia, avisa al asesor y manda el dato a Meta</td></tr>
-<tr><td class="cod">VG·10</td><td>No llegó a su cita</td><td>Lo llama el agente de voz, le pregunta qué pasó y le ofrece otro horario</td></tr>
+<tr><td class="cod">VG·10</td><td>No llegó a su cita</td><td>Lo llama el agente de voz, le pregunta qué pasó y le ofrece otro horario. Si su cita era en la oficina, también se le ofrece en línea</td></tr>
 <tr><td class="cod">VG·12</td><td>El asesor manda su reporte</td><td>Registra el resultado y el pago, y actualiza su tarjeta</td></tr>
 <tr><td class="cod">VG·11</td><td>Deja anticipo o liquida</td><td>Manda a firmar el documento que toca y cierra la venta</td></tr>
 <tr><td class="cod">VG·28</td><td>Llega la fecha en que se comprometió a pagar</td><td>Le recuerda ese mismo día y sigue hasta que liquide</td></tr>
@@ -133,6 +134,18 @@ footer{color:var(--gris);font-size:12px;margin-top:44px;border-top:1px solid var
 <tr><td class="cod">VG·31</td><td>Legal registra la fecha definitiva</td><td>Le avisa al cliente solo esa fecha y lo invita a agendar su Check-in. Es de la segunda etapa</td></tr>
 </table>
 
+<h2 class="sec">Los datos que guarda cada cliente</h2>
+<p class="secsub">Todo lo que pasa queda escrito en su ficha. Con esto se sabe de dónde vino cada cliente que pagó y qué lo hizo comprar.</p>
+<table>
+<tr><th>Grupo</th><th>Qué se guarda</th></tr>
+<tr><td class="n">Origen</td><td>Red por la que llegó, reel o anuncio de origen, landing que se le mandó y cómo agendó (landing o chat)</td></tr>
+<tr><td class="n">Su caso</td><td>Caso (Renovación, Primera vez, Visa negada, Perdón o Expert), los 4 filtros, clasificación y, si es Expert, el tipo de trámite</td></tr>
+<tr><td class="n">Su cita</td><td>Sucursal, modalidad (oficina o en línea), dirección y mapa, fecha y hora, si confirmó, veces que reagendó y veces que no llegó</td></tr>
+<tr><td class="n">Las llamadas</td><td>Resultado, nivel de compromiso, resumen, grabación y duración</td></tr>
+<tr><td class="n">La venta</td><td>Asesor que atendió, resultado de la consultoría, paquete, estado de pago, monto, total abonado, medio de pago, fecha en que se comprometió a pagar y fecha de liquidación</td></tr>
+<tr><td class="n">Los documentos</td><td>Lugar de firma, aviso firmado, carta compromiso firmada y si confirmó haber recibido su comprobante</td></tr>
+</table>
+
 <h2 class="sec">Lo que se agrega</h2>
 <table>
 <tr><th>Pieza</th><th>Cuántas</th><th>Para qué</th></tr>
@@ -143,7 +156,7 @@ footer{color:var(--gris);font-size:12px;margin-top:44px;border-top:1px solid var
 <tr><td class="n">Bot de chat</td><td class="n">1</td><td>Pregunta la ciudad, califica, manda la landing y agenda, en la red donde llegó el cliente</td></tr>
 <tr><td class="n">Tablero de ventas</td><td class="n">1</td><td>MyVisaGo · Ventas, con una columna por cada caso y cada paso. Ya está armado en High Level</td></tr>
 <tr><td class="n">Usuarios</td><td class="n">6</td><td>Uno por sucursal y uno para el online. Cada uno ve solo los leads de su sucursal, desde el primer mensaje</td></tr>
-<tr><td class="n">Calendarios</td><td class="n">6</td><td>Uno por ciudad, con su horario y su cupo, más el online, solo para Renovación y nunca de entrada</td></tr>
+<tr><td class="n">Calendarios</td><td class="n">6</td><td>Uno por ciudad, con su horario y su cupo, más el online, para los cinco casos y nunca de entrada a quien vive cerca de una oficina</td></tr>
 </table>
 
 <h2 class="sec">Horarios y cupo por oficina</h2>
@@ -157,6 +170,20 @@ footer{color:var(--gris);font-size:12px;margin-top:44px;border-top:1px solid var
 <tr><td>En línea</td><td class="n">Por definir</td><td class="n">Por definir</td><td class="n">Por definir</td><td class="n">—</td></tr>
 </table>
 <p class="secsub">Citas de 1 hora y con 4 días de anticipación como máximo, porque las citas lejanas no llegan. De lunes a viernes las oficinas cierran a las 6, así que la última cita se agenda a las 5. Domingo cerrado, aunque el agente de voz sí llama ese día para confirmar las citas del martes. Las citas en línea las atiende Erika.</p>
+
+<h2 class="sec">La atención en línea</h2>
+<p class="secsub">Para los cinco casos y las 5 ciudades. La atiende Erika; si crece el volumen, se suman más asesores en línea. El objetivo sigue siendo que el cliente vaya a la oficina.</p>
+<table>
+<tr><th>Paso</th><th>Qué pasa</th><th>Pieza</th></tr>
+<tr><td class="n">Agenda</td><td>Se agenda en el calendario en línea. El cliente queda asignado a Erika y todo le llega por la línea en línea</td><td class="cod">VG·00 · VG·34</td></tr>
+<tr><td class="n">Confirmación</td><td>Le llega su confirmación con el enlace de su videollamada y, 5 minutos después, la guía para prepararse</td><td class="cod">VG·03</td></tr>
+<tr><td class="n">Recordatorios</td><td>Un día antes y el mismo día, con el enlace</td><td class="cod">VG·08</td></tr>
+<tr><td class="n">La cita</td><td>Al empezar la videollamada, Erika marca que asistió. No hay QR ni botón "Ya llegué"</td><td class="cod">VG·09</td></tr>
+<tr><td class="n">Pago</td><td>Va antes de la firma: por transferencia, y por la pasarela de pago cuando esté lista</td><td class="cod">VG·12</td></tr>
+<tr><td class="n">Firma</td><td>El aviso y la carta compromiso le llegan al correo y los firma desde su celular. Si no le llega, se le comparte el enlace por WhatsApp</td><td class="cod">VG·11</td></tr>
+<tr><td class="n">Consulado</td><td>La entrevista en el consulado sí es en persona</td><td class="cod">—</td></tr>
+</table>
+<p class="secsub">El enlace de la videollamada lo genera High Level al conectar el Google Calendar de cada calendario. Es el último paso, para que las pruebas no llenen los calendarios.</p>
 
 <h2 class="sec">El agente de voz</h2>
 <p class="secsub">Lo construye DAPTA y se llama Sofía. Habla español de México y las llamadas quedan grabadas. No vende ni asesora: confirma y mide. Lo que diga la persona queda escrito en el sistema, y a partir de ahí todo lo demás se dispara solo.</p>
@@ -184,10 +211,10 @@ footer{color:var(--gris);font-size:12px;margin-top:44px;border-top:1px solid var
 <table>
 <tr><th>Caso</th><th>Quién entra</th><th>Qué recibe</th></tr>
 <tr><td class="n">Renovación</td><td>Visa vigente o vencida máximo 10 meses, obtenida siendo mayor de edad</td><td>Renovación Express, cita en 15 días, solo fotos y huellas</td></tr>
-<tr><td class="n">Primera vez</td><td>Nunca ha tenido, vencida hace más de 10 meses, o la sacó siendo menor de edad</td><td>Acelerador Consular, cita en menos de 120 días hábiles</td></tr>
-<tr><td class="n">Visa negada</td><td>Ya se la negaron, sin antecedentes</td><td>Acelerador Consular</td></tr>
+<tr><td class="n">Primera vez</td><td>Nunca ha tenido, vencida hace más de 10 meses, o la sacó siendo menor de edad</td><td>Premium AXIS 360°, cita en menos de 120 días hábiles</td></tr>
+<tr><td class="n">Visa negada</td><td>Ya se la negaron, sin antecedentes</td><td>Premium AXIS 360°</td></tr>
 <tr><td class="n">Perdón</td><td>Estuvo ilegal, lo deportaron, trabajó allá o mintió en un trámite</td><td>Perdón AXIS Waiver, con abogado</td></tr>
-<tr><td class="n">Expert</td><td>Todo trámite de Estados Unidos que no es la visa de turista: inversionista, trabajo con empleador, estudios, residencia, ciudadanía, pasaporte americano</td><td>Lo atiende la división Expert. <strong>La cita cuesta $1,500 y se paga por adelantado.</strong> Si contrata, se le toma a cuenta completo</td></tr>
+<tr><td class="n">Expert</td><td>Todo trámite de Estados Unidos que no es la visa de turista: inversionista, trabajo con empleador, estudios, residencia, ciudadanía, pasaporte americano</td><td>Lo atiende la división Expert. <strong>La cita cuesta $1,500 y se paga por adelantado.</strong> Si contrata, se le toma a cuenta completo. También puede ser en línea</td></tr>
 </table>
 <h2 class="sec">La visa de trabajo: de descarte a venta</h2>
 <p class="secsub">Es la pregunta que más llega y la que hoy se pierde. La visa de trabajo no se tramita desde México: la inicia la empresa que va a contratar a la persona, allá. Como casi nadie tiene empleador, el bot deja de despedirlos y les ofrece lo que sí les sirve.</p>
@@ -218,11 +245,11 @@ footer{color:var(--gris);font-size:12px;margin-top:44px;border-top:1px solid var
 <tr><td class="n">Dos días antes, 6 pm</td><td>A quien no contestó, WhatsApp con botones y hora límite</td><td class="cod">VG·06</td></tr>
 <tr><td class="n">Un día antes, 8 am</td><td>Si confirmó o mostró interés, recordatorio. Si nunca respondió, se libera su lugar y queda un día completo para alguien que sí quiera venir</td><td class="cod">VG·08</td></tr>
 <tr><td class="n">El día, 8 am</td><td>A quien sigue en pie, su recordatorio con el botón "Ya llegué"</td><td class="cod">VG·08</td></tr>
-<tr><td class="n">Si no llegó</td><td>Agente de no asistió: lo llama ese mismo día, le pregunta qué pasó y busca reagendarlo. Si es Renovación, también se le ofrece en línea</td><td class="cod">VG·10</td></tr>
+<tr><td class="n">Si no llegó</td><td>Agente de no asistió: lo llama ese mismo día, le pregunta qué pasó y busca reagendarlo. Si su cita era en la oficina, también se le ofrece en línea, en cualquier caso</td><td class="cod">VG·10</td></tr>
 </table>
 <p class="secsub">El cuarto agente no va en este orden: entra cuando el cliente llama con dudas. Quien agenda para hoy o para mañana solo recibe la llamada de los 5 minutos y su lugar no se libera solo, porque no tuvo oportunidad de responder. Si alguien llega aunque se le haya liberado el lugar, se le atiende si hay espacio. A las dos semanas se revisan los números y se ajusta la regla.</p>
 
-<footer>MyVisaGo · Sistema de venta en High Level · 5 ciudades · Noviembre 2026</footer>
+<footer>MyVisaGo · Sistema de venta en High Level · 5 ciudades · Actualizado el 18 de noviembre de 2026</footer>
 </div>
 <script>
 var W={hl:['High Level','q-hl'],bot:['Bot de chat','q-bot'],voz:['Agente de voz','q-voz'],hu:['Asesor','q-hu'],cl:['Cliente','q-cl']};
@@ -241,14 +268,14 @@ var S=[
 ['bot','Si no quiere abrir enlaces','Le pregunta qué pasó, le manda el video de testimonio de alguien con su mismo caso y luego le ofrece horarios en el mismo chat.',[['p','Método: Chat']]],
 ['bot','Al cliente caliente le ofrece lo más cercano','Si tiene prisa, le da el horario más próximo, incluso el mismo día.',[]],
 ['bot','Si agendó en el chat, le pide su WhatsApp','"Para mandarte tu confirmación y la dirección." Sin teléfono no hay recordatorios, porque en Facebook e Instagram solo se le puede escribir 24 horas después de su último mensaje.',[['p','Campo: Teléfono']]],
-['bot','Si no puede ir a la oficina','En línea solo existe para Renovación y nunca se ofrece de entrada: es la última opción si no puede ir, lo pregunta o vive donde no hay oficina. En los otros casos se le invita a la oficina más cercana.',[['p','Calendario Online']]],
-['hl','Se confirma su oficina','Según el calendario donde agendó, se carga la dirección y el mapa. Si agendó en otra ciudad, el lead pasa solo a esa sucursal.',[['f','VG·00'],['f','VG·34']]],
+['bot','Si no puede ir a la oficina','En línea existe para los cinco casos, por videollamada, pero nunca se ofrece de entrada a quien vive cerca de una oficina: primero se le invita a la oficina y, si de verdad no puede, se agenda en línea. Si vive donde no hay oficina, se agenda en línea directo.',[['p','Calendario Online']]],
+['hl','Se confirma su oficina','Según el calendario donde agendó, se carga la dirección y el mapa, y el lugar de firma de sus documentos. Si agendó en otra ciudad, el lead pasa solo a esa sucursal. Si agendó en línea, pasa a Erika.',[['f','VG·00'],['f','VG·34']]],
 ['hl','Si es Expert, primero paga','Al apartar la cita le llega por WhatsApp el enlace para pagar los $1,500. Con el pago queda confirmada; si no paga en 24 horas, el horario se libera. No recibe la confirmación gratuita, la guía ni la llamada de triaje.',[['f','VG·32'],['p','vg_expert_cobro'],['p','vg_expert_cita']]],
 ['hl','Confirmación inmediata','Desde aquí entra WhatsApp, por la línea de su ciudad. Fecha, hora, dirección de su oficina y botón de mapa. También le avisa que va a recibir una llamada.',[['f','VG·03'],['p','vg_confirmacion_cita']]]]],
 ['4','Primera llamada','A los 5 minutos de agendar',[
 ['voz','Sofía lo llama','Confirma que va a llegar, pregunta para cuándo quiere su visa y si algo le podría impedir venir. No vende ni asesora su caso.',[['f','VG·04'],['p','DAPTA']]],
 ['voz','Mide qué tan comprometido está','Queda marcado como alto, medio o bajo. Eso define a quién vale la pena insistirle y a quién no.',[['f','VG·30']]],
-['hl','Le llega su guía de preparación','Un PDF con lo que debe traer y los errores más comunes. Llega preparado y valora más su cita.',[['f','VG·03'],['p','vg_material_preparacion']]]]],
+['hl','Le llega su guía de preparación','Una imagen dentro del mismo mensaje con lo que debe tener a la mano y los errores más comunes. Si su cita es en línea, además cómo prepararse para la videollamada. Llega preparado y valora más su cita.',[['f','VG·03'],['p','vg_material_preparacion_sucursal'],['p','vg_material_preparacion_en_linea']]]]],
 ['5','Confirmación','Dos días antes',[
 ['voz','Sofía llama otra vez, 10:00 am','Solo para saber si va, si quiere cambiarla o si ya no va. Dura menos de un minuto. También llama en domingo, así las citas del martes quedan confirmadas.',[['f','VG·06'],['p','DAPTA']]],
 ['hl','Según lo que contestó','Si confirma, se le agradece; si quiere cambiar, se le mandan horarios; si cancela, se libera su lugar de inmediato.',[['p','vg_cita_confirmada'],['p','vg_cambio_horario'],['p','vg_cita_cancelada']]],
@@ -262,7 +289,7 @@ var S=[
 ['cl','Escanea el QR de recepción o toca "Ya llegué"','Se abre WhatsApp con el mensaje listo; solo lo envía.',[]],
 ['hl','Queda registrada su asistencia','Se le avisa al asesor que ya llegó, con su nombre, su caso y lo que le preocupa. También se le avisa a Meta que esta persona sí asistió.',[['f','VG·09']]],
 ['hu','Si llegó sin escanear','El asesor lo marca como asistió desde su calendario.',[]],
-['voz','Si no llegó, lo llama el agente','Ese mismo día le pregunta qué pasó y busca reagendarlo. Si es Renovación, también se le ofrece en línea.',[['f','VG·10']]],
+['voz','Si no llegó, lo llama el agente','Ese mismo día le pregunta qué pasó y busca reagendarlo. Si su cita era en la oficina, también se le ofrece en línea, en cualquier caso.',[['f','VG·10']]],
 ['hl','También por WhatsApp','Le llega el mensaje con la opción de otro horario.',[['f','VG·10'],['p','vg_no_asistio'],['p','vg_no_asistio_opcion_online']]]]],
 ['8','Consultoría','30 minutos, en la oficina o en línea',[
 ['hu','El Asesor Migratorio atiende al cliente','Revisa su caso y le receta la opción que le corresponde. En el reporte queda anotado quién lo atendió.',[]],
