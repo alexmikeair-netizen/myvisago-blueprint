@@ -78,7 +78,7 @@ footer{color:var(--gris);font-size:12px;margin-top:44px;border-top:1px solid var
 <main id="bp"></main>
 
 <h2 class="sec">Los mensajes de WhatsApp</h2>
-<p class="secsub">Sirven igual para las 5 ciudades y el online: la dirección, el mapa y el enlace de la videollamada se llenan solos según la cita. Cada uno sale por la línea de la ciudad de la cita, y los de en línea por la línea en línea. <strong>20 ya están aprobados por Meta y funcionando.</strong> Meta decidió que 8 son de marketing (cuestan más y tienen un límite de envíos por persona); los demás son de utilidad. La guía de preparación es el único mensaje que tiene dos versiones, una para la oficina y otra para la videollamada, porque la imagen va dentro del mensaje. Los 3 de Expert se suben cuando esté la pasarela de pago.</p>
+<p class="secsub">Sirven igual para las 5 ciudades y el online: la dirección, el mapa y el enlace de la videollamada se llenan solos según la cita. Cada uno sale por la línea de la ciudad de la cita, y los de en línea por la línea en línea. <strong>20 ya están aprobados por Meta y funcionando.</strong> Meta decidió que 8 son de marketing (cuestan más y tienen un límite de envíos por persona); los demás son de utilidad. La guía de preparación es el único mensaje que tiene dos versiones, una para la oficina y otra para la videollamada, porque la imagen va dentro del mensaje. Los 3 de Expert (la cita, el comprobante de pago y el expediente) ya están aprobados.</p>
 <table>
 <tr><th>Mensaje</th><th>Tipo</th><th>Cuándo sale</th><th>Flujo</th></tr>
 <tr><td class="pl">vg_confirmacion_cita</td><td><span class="pill util">Utilidad</span></td><td>Al agendar y al cambiar de fecha: día, hora, dirección y mapa</td><td class="cod">VG·03</td></tr>
@@ -101,9 +101,9 @@ footer{color:var(--gris);font-size:12px;margin-top:44px;border-top:1px solid var
 <tr><td class="pl">vg_recordatorio_online</td><td><span class="pill util">Utilidad</span></td><td>Un día antes y el día de la cita, en línea, con el enlace de su videollamada</td><td class="cod">VG·08</td></tr>
 <tr><td class="pl">vg_retomar_cita</td><td><span class="pill mkt">Marketing</span></td><td>24 horas después de calificar, al que dejó su teléfono y no agendó. Sale por la línea general</td><td class="cod">VG·02</td></tr>
 <tr><td class="pl">vg_ultimo_intento</td><td><span class="pill mkt">Marketing</span></td><td>Al día 7, última invitación antes de dejarlo en paz. Sale por la línea general</td><td class="cod">VG·02</td></tr>
-<tr><td class="pl">vg_expert_cobro</td><td><span class="pill util">Utilidad</span></td><td>Expert, al apartar su cita: fecha, hora, costo de $1,500 y botón para pagar. Sin pago en 24 horas se libera</td><td class="cod">VG·32</td></tr>
-<tr><td class="pl">vg_expert_cita</td><td><span class="pill util">Utilidad</span></td><td>Expert, al recibir su pago: cita confirmada, dirección y mapa</td><td class="cod">VG·32</td></tr>
-<tr><td class="pl">vg_expert_expediente</td><td><span class="pill util">Utilidad</span></td><td>Expert, cuando su expediente está listo, para que su asesor le llame</td><td class="cod">VG·33</td></tr>
+<tr><td class="pl">vg_expert_cita</td><td><span class="pill util">Utilidad</span></td><td>Expert, al agendar: cita confirmada con lugar (o el enlace de la videollamada) y el aviso de que el diagnóstico de $1,500 se paga al empezar</td><td class="cod">VG·03</td></tr>
+<tr><td class="pl">vg_pago_recibido</td><td><span class="pill util">Utilidad</span></td><td>Su comprobante: «recibimos tu pago de $X por tal concepto». Sale con cada pago que registra el asesor, Expert incluido</td><td class="cod">VG·12</td></tr>
+<tr><td class="pl">vg_expert_expediente</td><td><span class="pill mkt">Marketing</span></td><td>Expert, cuando su expediente está listo, para que su asesor le llame</td><td class="cod">VG·33</td></tr>
 </table>
 
 <h2 class="sec">Las automatizaciones</h2>
@@ -115,7 +115,7 @@ footer{color:var(--gris);font-size:12px;margin-top:44px;border-top:1px solid var
 <tr><td class="cod">VG·01</td><td>Llega el primer mensaje</td><td>Crea el contacto, guarda de qué red y anuncio vino y abre su tarjeta</td></tr>
 <tr><td class="cod">VG·26</td><td>El bot termina de calificar</td><td>Mueve la tarjeta a la columna de su caso</td></tr>
 <tr><td class="cod">VG·03</td><td>Agenda o cambia su cita</td><td>Manda la confirmación y, 5 minutos después, la guía de preparación: la de oficina o la de videollamada</td></tr>
-<tr><td class="cod">VG·04</td><td>5 minutos después de agendar</td><td>Lanza la primera llamada del agente de voz. A Expert no, porque su cita la confirma el pago</td></tr>
+<tr><td class="cod">VG·04</td><td>5 minutos después de agendar</td><td>Lanza la primera llamada del agente de voz, igual que a todos</td></tr>
 <tr><td class="cod">VG·30</td><td>Termina esa llamada</td><td>Según lo que haya dicho: confirma, cambia la fecha o cancela. Si cambia o cancela, su tarjeta regresa a su caso</td></tr>
 <tr><td class="cod">VG·06</td><td>Dos días antes, 10 am</td><td>Segunda llamada; si no contesta, WhatsApp a las 6 pm</td></tr>
 <tr><td class="cod">VG·08</td><td>Un día antes, 8 am</td><td>Recordatorio al comprometido, o libera el lugar del que nunca respondió. El día de la cita le manda el botón "Ya llegué"</td></tr>
@@ -128,8 +128,7 @@ footer{color:var(--gris);font-size:12px;margin-top:44px;border-top:1px solid var
 <tr><td class="cod">VG·13</td><td>3 horas después de su cita</td><td>Le pregunta cómo le fue y detecta ventas sin reportar</td></tr>
 <tr><td class="cod">VG·02</td><td>Calificó pero no agendó</td><td>Si dejó teléfono, lo invita a las 24 horas y otra vez al día 7. Si no, un solo seguimiento en su chat. A Expert no</td></tr>
 <tr><td class="cod">VG·14</td><td>Asistió y no hay reporte</td><td>Le recuerda al asesor que falta su reporte</td></tr>
-<tr><td class="cod">VG·32</td><td>Un Expert aparta su cita</td><td>Le manda el enlace de pago. Con el pago confirma la cita; sin pago en 24 horas, libera el horario</td></tr>
-<tr><td class="cod">VG·33</td><td>Un Expert asistió</td><td>A los 3 días hábiles revisa que se haya entregado su expediente y le avisa que está listo</td></tr>
+<tr><td class="cod">VG·33</td><td>Un Expert pagó su diagnóstico</td><td>A los 3 días de pagar su diagnóstico, si no se ha entregado su expediente, le crea una tarea a su asesor. Cuando el asesor lo marca como entregado, al cliente le llega el aviso de que está listo</td></tr>
 <tr><td class="cod">VG·35</td><td>Alguien llama sin tener cita</td><td>Si quiere agendar o pide una persona, le deja la tarea a su asesor para que le llame</td></tr>
 <tr><td class="cod">VG·31</td><td>Legal registra la fecha definitiva</td><td>Le avisa al cliente solo esa fecha y lo invita a agendar su Check-in. Es de la segunda etapa</td></tr>
 </table>
@@ -171,6 +170,22 @@ footer{color:var(--gris);font-size:12px;margin-top:44px;border-top:1px solid var
 </table>
 <p class="secsub">Citas de 1 hora y con 4 días de anticipación como máximo, porque las citas lejanas no llegan. De lunes a viernes las oficinas cierran a las 6, así que la última cita se agenda a las 5. Domingo cerrado, aunque el agente de voz sí llama ese día para confirmar las citas del martes. Las citas en línea las atiende Erika.</p>
 
+<h2 class="sec">El control de los pagos</h2>
+<p class="secsub">El dinero entra por dos puertas y cada pago se cuenta una sola vez. Ningún pago se da por bueno sin verificarlo en la cuenta de la empresa.</p>
+<table>
+<tr><th>Puerta</th><th>Cuándo</th><th>Quién lo registra</th></tr>
+<tr><td class="n">1 · El reporte del asesor</td><td>Efectivo, terminal, QR o transferencia, en la oficina o en línea</td><td>El asesor (en línea, Erika), después de verificar el depósito</td></tr>
+<tr><td class="n">2 · La pasarela de pago</td><td>Cuando se conecte: el cliente paga con un enlace de Mercado Pago y queda registrado solo</td><td>El sistema; el reporte ya no pide el monto</td></tr>
+</table>
+<table>
+<tr><th>Paso (transferencia)</th><th>Qué pasa</th></tr>
+<tr><td class="n">1</td><td>El asesor manda los datos de transferencia y pide la captura del comprobante por el mismo chat</td></tr>
+<tr><td class="n">2</td><td>El asesor verifica en la cuenta que el dinero llegó. La captura sola no vale</td></tr>
+<tr><td class="n">3</td><td>Lo registra en su reporte con el monto y el medio. El sistema anota el pago y suma el total abonado</td></tr>
+<tr><td class="n">4</td><td>Al cliente le llega su comprobante: «recibimos tu pago de $X por tal concepto»</td></tr>
+</table>
+<p class="secsub">Mercado Pago es la opción recomendada para la pasarela: la mayoría ya tiene cuenta, paga en un clic y el dinero se libera en horas o días según se elija. Se conecta al final.</p>
+
 <h2 class="sec">La atención en línea</h2>
 <p class="secsub">Para los cinco casos y las 5 ciudades. La atiende Erika; si crece el volumen, se suman más asesores en línea. El objetivo sigue siendo que el cliente vaya a la oficina.</p>
 <table>
@@ -189,7 +204,7 @@ footer{color:var(--gris);font-size:12px;margin-top:44px;border-top:1px solid var
 <p class="secsub">Lo construye DAPTA y se llama Sofía. Habla español de México y las llamadas quedan grabadas. No vende ni asesora: confirma y mide. Lo que diga la persona queda escrito en el sistema, y a partir de ahí todo lo demás se dispara solo.</p>
 <table>
 <tr><th>Agente</th><th>Cuándo llama</th><th>Para qué</th><th>Dura</th></tr>
-<tr><td class="n">Sofía · Triaje</td><td>5 minutos después de agendar</td><td>Confirma que va a llegar, pregunta para cuándo quiere su visa y qué podría impedirle venir. No llama a Expert</td><td class="n">menos de 2 min</td></tr>
+<tr><td class="n">Sofía · Triaje</td><td>5 minutos después de agendar</td><td>Confirma que va a llegar, pregunta para cuándo quiere su visa y qué podría impedirle venir. Llama también a Expert</td><td class="n">menos de 2 min</td></tr>
 <tr><td class="n">Sofía · Confirmación</td><td>Dos días antes, 10 am</td><td>Si va, si quiere cambiarla o si ya no va</td><td class="n">menos de 1 min</td></tr>
 </table>
 <p class="secsub">Más adelante entran dos más: uno que llama al que no llegó, el mismo día, y uno que contesta cuando el cliente devuelve la llamada.</p>
@@ -221,7 +236,7 @@ footer{color:var(--gris);font-size:12px;margin-top:44px;border-top:1px solid var
 <table>
 <tr><th>Lo que contesta</th><th>Qué hace el bot</th><th>En qué termina</th></tr>
 <tr><td class="n">No tiene empleador</td><td>Le explica cómo funciona y le ofrece la visa de turista para ir a entrevistas de trabajo y conseguir quién lo contrate</td><td>Vuelve a los 4 casos normales. Queda marcado para medir cuántos compraron así</td></tr>
-<tr><td class="n">Sí tiene empleador</td><td>Lo pasa a la división Expert</td><td>Cita de $1,500, pagada por adelantado</td></tr>
+<tr><td class="n">Sí tiene empleador</td><td>Lo pasa a la división Expert</td><td>Cita de $1,500, que se paga al empezar</td></tr>
 <tr><td class="n">Va a entrevistas</td><td>Lo califica normal</td><td>Visa de turista</td></tr>
 </table>
 <p class="secsub">Con la visa de turista se puede entrar a Estados Unidos a tener entrevistas de trabajo. Lo único que no se puede es trabajar, o sea recibir un pago.</p>
@@ -230,9 +245,9 @@ footer{color:var(--gris);font-size:12px;margin-top:44px;border-top:1px solid var
 <table>
 <tr><th>Paso</th><th>Qué pasa</th></tr>
 <tr><td class="n">1</td><td>El bot detecta que no es visa de turista y le explica el modelo: cada caso es distinto, no hay precios de lista</td></tr>
-<tr><td class="n">2</td><td>El bot le aparta la cita en el calendario de su ciudad y le llega por WhatsApp el enlace para pagar los $1,500. Con el pago queda confirmada; si no paga en 24 horas, el horario se libera</td></tr>
-<tr><td class="n">3</td><td>Acude a la oficina y se recaba su información</td></tr>
-<tr><td class="n">4</td><td>Tres días hábiles después, su asesor le entrega el expediente que arma el equipo legal, con lo que puede hacer</td></tr>
+<tr><td class="n">2</td><td>El bot le agenda una cita normal en el calendario de su ciudad, o en el calendario en línea si vive donde no hay oficina. Le llega su confirmación con el aviso de que el diagnóstico cuesta $1,500</td></tr>
+<tr><td class="n">3</td><td>Paga sus $1,500 al empezar: en la oficina, con el asesor; en línea, por transferencia antes de conectarse con Erika. El asesor lo registra en su reporte y al cliente le llega su comprobante</td></tr>
+<tr><td class="n">4</td><td>Tres días después, su asesor le entrega el diagnóstico que arma el equipo legal, con lo que puede hacer. Si se pasa el plazo sin entregarlo, el asesor recibe una tarea</td></tr>
 <tr><td class="n">5</td><td>Si decide hacer el trámite, los $1,500 se le toman a cuenta. Si no, el cobro se queda, porque el expediente ya se armó</td></tr>
 </table>
 
@@ -249,7 +264,7 @@ footer{color:var(--gris);font-size:12px;margin-top:44px;border-top:1px solid var
 </table>
 <p class="secsub">El cuarto agente no va en este orden: entra cuando el cliente llama con dudas. Quien agenda para hoy o para mañana solo recibe la llamada de los 5 minutos y su lugar no se libera solo, porque no tuvo oportunidad de responder. Si alguien llega aunque se le haya liberado el lugar, se le atiende si hay espacio. A las dos semanas se revisan los números y se ajusta la regla.</p>
 
-<footer>MyVisaGo · Sistema de venta en High Level · 5 ciudades · Actualizado el 18 de noviembre de 2026</footer>
+<footer>MyVisaGo · Sistema de venta en High Level · 5 ciudades · Actualizado el 18 de noviembre de 2026 (Expert y pagos)</footer>
 </div>
 <script>
 var W={hl:['High Level','q-hl'],bot:['Bot de chat','q-bot'],voz:['Agente de voz','q-voz'],hu:['Asesor','q-hu'],cl:['Cliente','q-cl']};
@@ -270,7 +285,7 @@ var S=[
 ['bot','Si agendó en el chat, le pide su WhatsApp','"Para mandarte tu confirmación y la dirección." Sin teléfono no hay recordatorios, porque en Facebook e Instagram solo se le puede escribir 24 horas después de su último mensaje.',[['p','Campo: Teléfono']]],
 ['bot','Si no puede ir a la oficina','En línea existe para los cinco casos, por videollamada, pero nunca se ofrece de entrada a quien vive cerca de una oficina: primero se le invita a la oficina y, si de verdad no puede, se agenda en línea. Si vive donde no hay oficina, se agenda en línea directo.',[['p','Calendario Online']]],
 ['hl','Se confirma su oficina','Según el calendario donde agendó, se carga la dirección y el mapa, y el lugar de firma de sus documentos. Si agendó en otra ciudad, el lead pasa solo a esa sucursal. Si agendó en línea, pasa a Erika.',[['f','VG·00'],['f','VG·34']]],
-['hl','Si es Expert, primero paga','Al apartar la cita le llega por WhatsApp el enlace para pagar los $1,500. Con el pago queda confirmada; si no paga en 24 horas, el horario se libera. No recibe la confirmación gratuita, la guía ni la llamada de triaje.',[['f','VG·32'],['p','vg_expert_cobro'],['p','vg_expert_cita']]],
+['hl','Si es Expert, su confirmación avisa del costo','Su cita es normal. En lugar de la confirmación gratuita y la guía, le llega una confirmación que le avisa que el diagnóstico cuesta $1,500 y se paga al empezar.',[['f','VG·03'],['p','vg_expert_cita']]],
 ['hl','Confirmación inmediata','Desde aquí entra WhatsApp, por la línea de su ciudad. Fecha, hora, dirección de su oficina y botón de mapa. También le avisa que va a recibir una llamada.',[['f','VG·03'],['p','vg_confirmacion_cita']]]]],
 ['4','Primera llamada','A los 5 minutos de agendar',[
 ['voz','Sofía lo llama','Confirma que va a llegar, pregunta para cuándo quiere su visa y si algo le podría impedir venir. No vende ni asesora su caso.',[['f','VG·04'],['p','DAPTA']]],
@@ -295,9 +310,9 @@ var S=[
 ['hu','El Asesor Migratorio atiende al cliente','Revisa su caso y le receta la opción que le corresponde. En el reporte queda anotado quién lo atendió.',[]],
 ['hu','Reporta el resultado','Un formulario corto: si liquidó, si dejó anticipo, si lo va a pensar o si reagendó. De ahí se desprende todo lo demás.',[['f','VG·12']]],
 ['hl','Si no compró','3 horas después se le pregunta cómo le fue, y queda registrado si el asesor no reportó.',[['f','VG·13'],['p','vg_seguimiento_asesoria']]],
-['hl','Si es Expert','Tres días hábiles después su asesor le entrega el expediente. Si contrata su trámite, los $1,500 se le toman a cuenta.',[['f','VG·33'],['p','vg_expert_expediente']]]]],
+['hl','Si es Expert','Al pagar sus $1,500 le llega su comprobante. Tres días después su asesor le entrega el diagnóstico y le avisa que está listo. Si contrata su trámite, los $1,500 se le toman a cuenta.',[['f','VG·33'],['p','vg_pago_recibido'],['p','vg_expert_expediente']]]]],
 ['9','Anticipo','Cuando deja algo a cuenta',[
-['cl','Paga una parte','Por transferencia, efectivo, terminal, QR o link de pago. La pasarela está en todos los paquetes, pero el único que se paga por adelantado es Expert.',[]],
+['cl','Paga una parte','Por transferencia, efectivo, terminal, QR o link de pago. Cada pago que registra el asesor le manda al cliente su comprobante por WhatsApp.',[['p','vg_pago_recibido']]],
 ['hu','El asesor lo registra','En el Reporte del asesor, desde la computadora: cuánto dejó, para cuándo completa y el correo del cliente.',[['f','VG·12'],['p','Formulario: Reporte del asesor']]],
 ['hl','Se genera su aviso de privacidad, ya lleno','Sale solo con sus datos. El asesor le pasa la tablet y firma ahí mismo; también le llega a su correo.',[['f','VG·11A'],['p','Plantilla: Aviso']]],
 ['cl','Firma en la tablet','Al firmar, su tarjeta pasa a Abonando, con su saldo a la vista. La firma es la que mueve la tarjeta.',[['f','VG·11C']]],
